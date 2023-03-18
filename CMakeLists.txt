@@ -9,5 +9,3 @@ set(SRCFILES ./main.cpp)
 add_executable(ChatCLI-server ${SRCFILES})
 
 find_package(gRPC CONFIG REQUIRED)
-
-include_directories(${SYSTEM_INCLUDE_DIR})
