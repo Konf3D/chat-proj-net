@@ -162,23 +162,23 @@ void net_service::Stub::async::getPublicMessagess(::grpc::ClientContext* context
   return result;
 }
 
-::grpc::Status net_service::Stub::savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::net_service::Token* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::net_service::PublicMessageSave, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_savePrivateMessage_, context, request, response);
+::grpc::Status net_service::Stub::savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PrivateMessageSave& request, ::net_service::Token* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::net_service::PrivateMessageSave, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_savePrivateMessage_, context, request, response);
 }
 
-void net_service::Stub::async::savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::net_service::PublicMessageSave, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_savePrivateMessage_, context, request, response, std::move(f));
+void net_service::Stub::async::savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PrivateMessageSave* request, ::net_service::Token* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::net_service::PrivateMessageSave, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_savePrivateMessage_, context, request, response, std::move(f));
 }
 
-void net_service::Stub::async::savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) {
+void net_service::Stub::async::savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PrivateMessageSave* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_savePrivateMessage_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::net_service::Token>* net_service::Stub::PrepareAsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::net_service::Token, ::net_service::PublicMessageSave, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_savePrivateMessage_, context, request);
+::grpc::ClientAsyncResponseReader< ::net_service::Token>* net_service::Stub::PrepareAsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PrivateMessageSave& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::net_service::Token, ::net_service::PrivateMessageSave, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_savePrivateMessage_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::net_service::Token>* net_service::Stub::AsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::net_service::Token>* net_service::Stub::AsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PrivateMessageSave& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncsavePrivateMessageRaw(context, request, cq);
   result->StartCall();
@@ -262,10 +262,10 @@ net_service::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       net_service_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< net_service::Service, ::net_service::PublicMessageSave, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< net_service::Service, ::net_service::PrivateMessageSave, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](net_service::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::net_service::PublicMessageSave* req,
+             const ::net_service::PrivateMessageSave* req,
              ::net_service::Token* resp) {
                return service->savePrivateMessage(ctx, req, resp);
              }, this)));
@@ -319,7 +319,7 @@ net_service::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status net_service::Service::savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response) {
+::grpc::Status net_service::Service::savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PrivateMessageSave* request, ::net_service::Token* response) {
   (void) context;
   (void) request;
   (void) response;

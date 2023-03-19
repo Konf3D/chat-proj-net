@@ -8,7 +8,7 @@ service net_service {
 	rpc signOff (Token) returns (Token) {}
 	rpc savePublicMessage (PublicMessageSave) returns (Token) {};
 	rpc getPublicMessagess (MsgPos) returns (PublicMessageLoad) {};
-	rpc savePrivateMessage (PublicMessageSave) returns (Token) {};
+	rpc savePrivateMessage (PrivateMessageSave) returns (Token) {};
 	rpc getPrivateMessages (MsgPos) returns (PrivateMessageLoad) {};
 }
 //todo optimization
