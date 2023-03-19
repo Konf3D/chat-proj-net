@@ -7,7 +7,7 @@
 
 struct PublicMessage
 {
-    std::string context;
+    std::string content;
     std::string sender;
 };
 struct PrivateMessage : public PublicMessage

@@ -6,10 +6,10 @@ service net_service {
 	rpc signUp (CredentialsSignUp) returns (Token) {}
 	rpc signIn (CredentialsSignIn) returns (Token) {}
 	rpc signOff (Token) returns (Token) {}
-	rpc savePublicMessage (PublicMessageSave) returns (Token) {};
-	rpc getPublicMessages (Token) returns ( stream PublicMessageLoad) {};
-	rpc savePrivateMessage (PrivateMessageSave) returns (Token) {};
-	rpc getPrivateMessages (Token) returns (stream PrivateMessageLoad) {};
+	rpc savePublicMessage (PublicMessageSave) returns (Token) {}
+	rpc getPublicMessages (Token) returns (PublicMessageLoad) {}
+	rpc savePrivateMessage (PrivateMessageSave) returns (Token) {}
+	rpc getPrivateMessages (Token) returns (PrivateMessageLoad) {}
 }
 
 message Token {
@@ -35,17 +35,19 @@ message PublicMessageSave {
 	string token = 3;
 }
 message PublicMessageLoad {
-	string sender = 1;
-	string content = 2;
-	string token = 4;
+	repeated string sender = 1;
+	repeated string content = 2;
+	string token = 3;
 }
 message PrivateMessageSave {
 	string sender = 1;
 	string content = 2;
 	string reciever = 3;
+	string token = 4;
 }
 message PrivateMessageLoad {
-	string sender = 1;
-	string content = 2;
-	string reciever = 3;
+	repeated string sender = 1;
+	repeated string content = 2;
+	repeated string reciever = 3;
+	string token = 4;
 }
