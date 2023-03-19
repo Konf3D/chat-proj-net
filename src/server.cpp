@@ -137,25 +137,58 @@ grpc::Status ChatServer::savePrivateMessage(::grpc::ServerContext* context, cons
         return request->sender() == user.username;
     };
     const auto sender = std::find_if(_users.begin(), _users.end(), isSenderPresent);
+
     auto isRecieverPresent = [&request](const User& user)
     {
         return request->reciever() == user.username;
     };
-    const auto reciver = std::find_if(_users.begin(), _users.end(), isRecieverPresent);
+    const auto reciever = std::find_if(_users.begin(), _users.end(), isRecieverPresent);
 
     auto isTokenPresent = [&request](const TokenLoginPair& tokenPair)
     {
-        //return request-> == tokenPair.token;
+        return request->token() == tokenPair.token;
     };
     const auto token = std::find_if(_tokens.begin(), _tokens.end(), isTokenPresent);
-    if (sender == _users.end() || token == _tokens.end())
+    if (reciever == _users.end() || sender == _users.end() || token == _tokens.end())
         return grpc::Status::OK;
+
+    _privateMessages.push_back({ request->content(),request->sender(),request->reciever() });
+    response->set_result(true);
     return grpc::Status::OK;
 }
 
 grpc::Status ChatServer::getPrivateMessages(::grpc::ServerContext* context, const::net_service::Token* request, ::net_service::PrivateMessageLoad* response)
 {
+    std::vector<PublicMessage*> publicMessages;
+    std::string login;
+    for (const auto& element : _tokens)
+    {
+        if (element.token == request->token())
+            login = element.login;
 
+    }
+    if (login.empty())
+        return grpc::Status::OK;
+
+    std::string username;
+    for (const auto& element : _users)
+    {
+        if (element.login == login)
+            username = element.username;
+
+    }
+    if (username.empty())
+        grpc::Status::CANCELLED;
+    for (const auto& element : _privateMessages)
+    {
+        if (element.reciever == username || element.sender == username)
+        {
+            response->add_content(element.content);
+            response->add_sender(element.sender);
+            response->add_reciever(element.reciever);
+        }
+    }
+    return grpc::Status::OK;
 }
 
 std::string random_string(std::size_t length)
