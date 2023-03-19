@@ -6,11 +6,24 @@ service net_service {
 	rpc signUp (CredentialsSignUp) returns (Token) {}
 	rpc signIn (CredentialsSignIn) returns (Token) {}
 	rpc signOff (Token) returns (Token) {}
-	rpc getName (Uid) returns (Uid) {}
-	rpc savePublicMessage (Token) returns (Token) {};
+	rpc savePublicMessage (PublicMessageSave) returns (Token) {};
 	rpc getPublicMessagess (MsgPos) returns (PublicMessageLoad) {};
-	rpc savePrivateMessage (Token) returns (Token) {};
+	rpc savePrivateMessage (PublicMessageSave) returns (Token) {};
 	rpc getPrivateMessages (MsgPos) returns (PrivateMessageLoad) {};
+}
+//todo optimization
+message Token {
+	string token = 1;
+	bool result = 2;
+}
+message CredentialsSignIn {
+	string login = 1;
+	string hash = 2;
+}
+message CredentialsSignUp {
+	string login = 1;
+	string username = 2;
+	string hash = 3;
 }
 message MsgPos {
 	string token = 1;
@@ -39,24 +52,4 @@ message PrivateMessageLoad {
 	string reciever = 3;
 	int64 position = 4;
 	string token = 5;
-}
-message CredentialsSignIn {
-	string login = 1;
-	string hash = 2;
-	string token = 3;
-}
-message CredentialsSignUp {
-	string login = 1;
-	string username = 2;
-	string hash = 3;
-	string token = 4;
-}
-message Uid {
-	string id = 1;
-	string token = 2;
-	bool result = 3;
-}
-message Token {
-	string token = 1;
-	bool result = 2;
 }

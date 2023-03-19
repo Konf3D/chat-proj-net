@@ -56,18 +56,11 @@ class net_service final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> PrepareAsyncsignOff(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>>(PrepareAsyncsignOffRaw(context, request, cq));
     }
-    virtual ::grpc::Status getName(::grpc::ClientContext* context, const ::net_service::Uid& request, ::net_service::Uid* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Uid>> AsyncgetName(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Uid>>(AsyncgetNameRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Uid>> PrepareAsyncgetName(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Uid>>(PrepareAsyncgetNameRaw(context, request, cq));
-    }
-    virtual ::grpc::Status savePublicMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::net_service::Token* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> AsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status savePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::net_service::Token* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> AsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>>(AsyncsavePublicMessageRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> PrepareAsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> PrepareAsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>>(PrepareAsyncsavePublicMessageRaw(context, request, cq));
     }
     virtual ::grpc::Status getPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::net_service::PublicMessageLoad* response) = 0;
@@ -77,11 +70,11 @@ class net_service final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::PublicMessageLoad>> PrepareAsyncgetPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::PublicMessageLoad>>(PrepareAsyncgetPublicMessagessRaw(context, request, cq));
     }
-    virtual ::grpc::Status savePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::net_service::Token* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> AsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::net_service::Token* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> AsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>>(AsyncsavePrivateMessageRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> PrepareAsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>> PrepareAsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>>(PrepareAsyncsavePrivateMessageRaw(context, request, cq));
     }
     virtual ::grpc::Status getPrivateMessages(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::net_service::PrivateMessageLoad* response) = 0;
@@ -100,14 +93,12 @@ class net_service final {
       virtual void signIn(::grpc::ClientContext* context, const ::net_service::CredentialsSignIn* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void signOff(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) = 0;
       virtual void signOff(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void getName(::grpc::ClientContext* context, const ::net_service::Uid* request, ::net_service::Uid* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void getName(::grpc::ClientContext* context, const ::net_service::Uid* request, ::net_service::Uid* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void savePublicMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void savePublicMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void savePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void savePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response, std::function<void(::grpc::Status)>) = 0;
       virtual void getPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getPrivateMessages(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response, std::function<void(::grpc::Status)>) = 0;
       virtual void getPrivateMessages(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -121,14 +112,12 @@ class net_service final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* PrepareAsyncsignInRaw(::grpc::ClientContext* context, const ::net_service::CredentialsSignIn& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* AsyncsignOffRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* PrepareAsyncsignOffRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Uid>* AsyncgetNameRaw(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Uid>* PrepareAsyncgetNameRaw(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* AsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* PrepareAsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* AsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* PrepareAsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::PublicMessageLoad>* AsyncgetPublicMessagessRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::PublicMessageLoad>* PrepareAsyncgetPublicMessagessRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* AsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* PrepareAsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* AsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::Token>* PrepareAsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::PrivateMessageLoad>* AsyncgetPrivateMessagesRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::net_service::PrivateMessageLoad>* PrepareAsyncgetPrivateMessagesRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -156,18 +145,11 @@ class net_service final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> PrepareAsyncsignOff(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>>(PrepareAsyncsignOffRaw(context, request, cq));
     }
-    ::grpc::Status getName(::grpc::ClientContext* context, const ::net_service::Uid& request, ::net_service::Uid* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Uid>> AsyncgetName(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Uid>>(AsyncgetNameRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Uid>> PrepareAsyncgetName(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Uid>>(PrepareAsyncgetNameRaw(context, request, cq));
-    }
-    ::grpc::Status savePublicMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::net_service::Token* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> AsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status savePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::net_service::Token* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> AsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>>(AsyncsavePublicMessageRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> PrepareAsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> PrepareAsyncsavePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>>(PrepareAsyncsavePublicMessageRaw(context, request, cq));
     }
     ::grpc::Status getPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::net_service::PublicMessageLoad* response) override;
@@ -177,11 +159,11 @@ class net_service final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::PublicMessageLoad>> PrepareAsyncgetPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::PublicMessageLoad>>(PrepareAsyncgetPublicMessagessRaw(context, request, cq));
     }
-    ::grpc::Status savePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::net_service::Token* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> AsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::net_service::Token* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> AsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>>(AsyncsavePrivateMessageRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> PrepareAsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>> PrepareAsyncsavePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::net_service::Token>>(PrepareAsyncsavePrivateMessageRaw(context, request, cq));
     }
     ::grpc::Status getPrivateMessages(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::net_service::PrivateMessageLoad* response) override;
@@ -200,14 +182,12 @@ class net_service final {
       void signIn(::grpc::ClientContext* context, const ::net_service::CredentialsSignIn* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) override;
       void signOff(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) override;
       void signOff(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void getName(::grpc::ClientContext* context, const ::net_service::Uid* request, ::net_service::Uid* response, std::function<void(::grpc::Status)>) override;
-      void getName(::grpc::ClientContext* context, const ::net_service::Uid* request, ::net_service::Uid* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void savePublicMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) override;
-      void savePublicMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void savePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) override;
+      void savePublicMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response, std::function<void(::grpc::Status)>) override;
       void getPublicMessagess(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) override;
-      void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, std::function<void(::grpc::Status)>) override;
+      void savePrivateMessage(::grpc::ClientContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getPrivateMessages(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response, std::function<void(::grpc::Status)>) override;
       void getPrivateMessages(::grpc::ClientContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -227,20 +207,17 @@ class net_service final {
     ::grpc::ClientAsyncResponseReader< ::net_service::Token>* PrepareAsyncsignInRaw(::grpc::ClientContext* context, const ::net_service::CredentialsSignIn& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::net_service::Token>* AsyncsignOffRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::net_service::Token>* PrepareAsyncsignOffRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::net_service::Uid>* AsyncgetNameRaw(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::net_service::Uid>* PrepareAsyncgetNameRaw(::grpc::ClientContext* context, const ::net_service::Uid& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* AsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* PrepareAsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* AsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* PrepareAsyncsavePublicMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::net_service::PublicMessageLoad>* AsyncgetPublicMessagessRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::net_service::PublicMessageLoad>* PrepareAsyncgetPublicMessagessRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* AsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* PrepareAsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* AsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::net_service::Token>* PrepareAsyncsavePrivateMessageRaw(::grpc::ClientContext* context, const ::net_service::PublicMessageSave& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::net_service::PrivateMessageLoad>* AsyncgetPrivateMessagesRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::net_service::PrivateMessageLoad>* PrepareAsyncgetPrivateMessagesRaw(::grpc::ClientContext* context, const ::net_service::MsgPos& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_signUp_;
     const ::grpc::internal::RpcMethod rpcmethod_signIn_;
     const ::grpc::internal::RpcMethod rpcmethod_signOff_;
-    const ::grpc::internal::RpcMethod rpcmethod_getName_;
     const ::grpc::internal::RpcMethod rpcmethod_savePublicMessage_;
     const ::grpc::internal::RpcMethod rpcmethod_getPublicMessagess_;
     const ::grpc::internal::RpcMethod rpcmethod_savePrivateMessage_;
@@ -255,10 +232,9 @@ class net_service final {
     virtual ::grpc::Status signUp(::grpc::ServerContext* context, const ::net_service::CredentialsSignUp* request, ::net_service::Token* response);
     virtual ::grpc::Status signIn(::grpc::ServerContext* context, const ::net_service::CredentialsSignIn* request, ::net_service::Token* response);
     virtual ::grpc::Status signOff(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response);
-    virtual ::grpc::Status getName(::grpc::ServerContext* context, const ::net_service::Uid* request, ::net_service::Uid* response);
-    virtual ::grpc::Status savePublicMessage(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response);
+    virtual ::grpc::Status savePublicMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response);
     virtual ::grpc::Status getPublicMessagess(::grpc::ServerContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response);
-    virtual ::grpc::Status savePrivateMessage(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response);
+    virtual ::grpc::Status savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response);
     virtual ::grpc::Status getPrivateMessages(::grpc::ServerContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response);
   };
   template <class BaseClass>
@@ -322,43 +298,23 @@ class net_service final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_getName : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_getName() {
-      ::grpc::Service::MarkMethodAsync(3);
-    }
-    ~WithAsyncMethod_getName() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getName(::grpc::ServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestgetName(::grpc::ServerContext* context, ::net_service::Uid* request, ::grpc::ServerAsyncResponseWriter< ::net_service::Uid>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_savePublicMessage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_savePublicMessage() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_savePublicMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestsavePublicMessage(::grpc::ServerContext* context, ::net_service::Token* request, ::grpc::ServerAsyncResponseWriter< ::net_service::Token>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestsavePublicMessage(::grpc::ServerContext* context, ::net_service::PublicMessageSave* request, ::grpc::ServerAsyncResponseWriter< ::net_service::Token>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -367,7 +323,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getPublicMessagess() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_getPublicMessagess() override {
       BaseClassMustBeDerivedFromService(this);
@@ -378,7 +334,7 @@ class net_service final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPublicMessagess(::grpc::ServerContext* context, ::net_service::MsgPos* request, ::grpc::ServerAsyncResponseWriter< ::net_service::PublicMessageLoad>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -387,18 +343,18 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_savePrivateMessage() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_savePrivateMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestsavePrivateMessage(::grpc::ServerContext* context, ::net_service::Token* request, ::grpc::ServerAsyncResponseWriter< ::net_service::Token>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestsavePrivateMessage(::grpc::ServerContext* context, ::net_service::PublicMessageSave* request, ::grpc::ServerAsyncResponseWriter< ::net_service::Token>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -407,7 +363,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getPrivateMessages() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_getPrivateMessages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -418,10 +374,10 @@ class net_service final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPrivateMessages(::grpc::ServerContext* context, ::net_service::MsgPos* request, ::grpc::ServerAsyncResponseWriter< ::net_service::PrivateMessageLoad>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_signUp<WithAsyncMethod_signIn<WithAsyncMethod_signOff<WithAsyncMethod_getName<WithAsyncMethod_savePublicMessage<WithAsyncMethod_getPublicMessagess<WithAsyncMethod_savePrivateMessage<WithAsyncMethod_getPrivateMessages<Service > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_signUp<WithAsyncMethod_signIn<WithAsyncMethod_signOff<WithAsyncMethod_savePublicMessage<WithAsyncMethod_getPublicMessagess<WithAsyncMethod_savePrivateMessage<WithAsyncMethod_getPrivateMessages<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_signUp : public BaseClass {
    private:
@@ -504,58 +460,31 @@ class net_service final {
       ::grpc::CallbackServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getName : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_getName() {
-      ::grpc::Service::MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::net_service::Uid, ::net_service::Uid>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::net_service::Uid* request, ::net_service::Uid* response) { return this->getName(context, request, response); }));}
-    void SetMessageAllocatorFor_getName(
-        ::grpc::MessageAllocator< ::net_service::Uid, ::net_service::Uid>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::Uid, ::net_service::Uid>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_getName() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getName(::grpc::ServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* getName(
-      ::grpc::CallbackServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithCallbackMethod_savePublicMessage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_savePublicMessage() {
-      ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::net_service::Token, ::net_service::Token>(
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::net_service::PublicMessageSave, ::net_service::Token>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::net_service::Token* request, ::net_service::Token* response) { return this->savePublicMessage(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response) { return this->savePublicMessage(context, request, response); }));}
     void SetMessageAllocatorFor_savePublicMessage(
-        ::grpc::MessageAllocator< ::net_service::Token, ::net_service::Token>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::Token, ::net_service::Token>*>(handler)
+        ::grpc::MessageAllocator< ::net_service::PublicMessageSave, ::net_service::Token>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::PublicMessageSave, ::net_service::Token>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_savePublicMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* savePublicMessage(
-      ::grpc::CallbackServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_getPublicMessagess : public BaseClass {
@@ -563,13 +492,13 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getPublicMessagess() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::net_service::MsgPos, ::net_service::PublicMessageLoad>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response) { return this->getPublicMessagess(context, request, response); }));}
     void SetMessageAllocatorFor_getPublicMessagess(
         ::grpc::MessageAllocator< ::net_service::MsgPos, ::net_service::PublicMessageLoad>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::MsgPos, ::net_service::PublicMessageLoad>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -590,26 +519,26 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_savePrivateMessage() {
-      ::grpc::Service::MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::net_service::Token, ::net_service::Token>(
+      ::grpc::Service::MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::net_service::PublicMessageSave, ::net_service::Token>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::net_service::Token* request, ::net_service::Token* response) { return this->savePrivateMessage(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response) { return this->savePrivateMessage(context, request, response); }));}
     void SetMessageAllocatorFor_savePrivateMessage(
-        ::grpc::MessageAllocator< ::net_service::Token, ::net_service::Token>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::Token, ::net_service::Token>*>(handler)
+        ::grpc::MessageAllocator< ::net_service::PublicMessageSave, ::net_service::Token>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::PublicMessageSave, ::net_service::Token>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_savePrivateMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* savePrivateMessage(
-      ::grpc::CallbackServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_getPrivateMessages : public BaseClass {
@@ -617,13 +546,13 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getPrivateMessages() {
-      ::grpc::Service::MarkMethodCallback(7,
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::net_service::MsgPos, ::net_service::PrivateMessageLoad>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response) { return this->getPrivateMessages(context, request, response); }));}
     void SetMessageAllocatorFor_getPrivateMessages(
         ::grpc::MessageAllocator< ::net_service::MsgPos, ::net_service::PrivateMessageLoad>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::net_service::MsgPos, ::net_service::PrivateMessageLoad>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -638,7 +567,7 @@ class net_service final {
     virtual ::grpc::ServerUnaryReactor* getPrivateMessages(
       ::grpc::CallbackServerContext* /*context*/, const ::net_service::MsgPos* /*request*/, ::net_service::PrivateMessageLoad* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_signUp<WithCallbackMethod_signIn<WithCallbackMethod_signOff<WithCallbackMethod_getName<WithCallbackMethod_savePublicMessage<WithCallbackMethod_getPublicMessagess<WithCallbackMethod_savePrivateMessage<WithCallbackMethod_getPrivateMessages<Service > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_signUp<WithCallbackMethod_signIn<WithCallbackMethod_signOff<WithCallbackMethod_savePublicMessage<WithCallbackMethod_getPublicMessagess<WithCallbackMethod_savePrivateMessage<WithCallbackMethod_getPrivateMessages<Service > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_signUp : public BaseClass {
@@ -692,35 +621,18 @@ class net_service final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_getName : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_getName() {
-      ::grpc::Service::MarkMethodGeneric(3);
-    }
-    ~WithGenericMethod_getName() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getName(::grpc::ServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_savePublicMessage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_savePublicMessage() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_savePublicMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -731,7 +643,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getPublicMessagess() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_getPublicMessagess() override {
       BaseClassMustBeDerivedFromService(this);
@@ -748,13 +660,13 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_savePrivateMessage() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_savePrivateMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -765,7 +677,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getPrivateMessages() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_getPrivateMessages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -837,43 +749,23 @@ class net_service final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_getName : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_getName() {
-      ::grpc::Service::MarkMethodRaw(3);
-    }
-    ~WithRawMethod_getName() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getName(::grpc::ServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestgetName(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_savePublicMessage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_savePublicMessage() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_savePublicMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsavePublicMessage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -882,7 +774,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getPublicMessagess() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_getPublicMessagess() override {
       BaseClassMustBeDerivedFromService(this);
@@ -893,7 +785,7 @@ class net_service final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPublicMessagess(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -902,18 +794,18 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_savePrivateMessage() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_savePrivateMessage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsavePrivateMessage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -922,7 +814,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getPrivateMessages() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_getPrivateMessages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -933,7 +825,7 @@ class net_service final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPrivateMessages(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1003,34 +895,12 @@ class net_service final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getName : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_getName() {
-      ::grpc::Service::MarkMethodRawCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getName(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_getName() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getName(::grpc::ServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* getName(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithRawCallbackMethod_savePublicMessage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_savePublicMessage() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->savePublicMessage(context, request, response); }));
@@ -1039,7 +909,7 @@ class net_service final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1052,7 +922,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getPublicMessagess() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPublicMessagess(context, request, response); }));
@@ -1074,7 +944,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_savePrivateMessage() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->savePrivateMessage(context, request, response); }));
@@ -1083,7 +953,7 @@ class net_service final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1096,7 +966,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getPrivateMessages() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPrivateMessages(context, request, response); }));
@@ -1194,44 +1064,17 @@ class net_service final {
     virtual ::grpc::Status StreamedsignOff(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::Token,::net_service::Token>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_getName : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_getName() {
-      ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::net_service::Uid, ::net_service::Uid>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::net_service::Uid, ::net_service::Uid>* streamer) {
-                       return this->StreamedgetName(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_getName() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status getName(::grpc::ServerContext* /*context*/, const ::net_service::Uid* /*request*/, ::net_service::Uid* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetName(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::Uid,::net_service::Uid>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_savePublicMessage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_savePublicMessage() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::net_service::Token, ::net_service::Token>(
+          ::net_service::PublicMessageSave, ::net_service::Token>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::net_service::Token, ::net_service::Token>* streamer) {
+                     ::net_service::PublicMessageSave, ::net_service::Token>* streamer) {
                        return this->StreamedsavePublicMessage(context,
                          streamer);
                   }));
@@ -1240,12 +1083,12 @@ class net_service final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePublicMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsavePublicMessage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::Token,::net_service::Token>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedsavePublicMessage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::PublicMessageSave,::net_service::Token>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getPublicMessagess : public BaseClass {
@@ -1253,7 +1096,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getPublicMessagess() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::net_service::MsgPos, ::net_service::PublicMessageLoad>(
             [this](::grpc::ServerContext* context,
@@ -1280,12 +1123,12 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_savePrivateMessage() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::net_service::Token, ::net_service::Token>(
+          ::net_service::PublicMessageSave, ::net_service::Token>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::net_service::Token, ::net_service::Token>* streamer) {
+                     ::net_service::PublicMessageSave, ::net_service::Token>* streamer) {
                        return this->StreamedsavePrivateMessage(context,
                          streamer);
                   }));
@@ -1294,12 +1137,12 @@ class net_service final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::Token* /*request*/, ::net_service::Token* /*response*/) override {
+    ::grpc::Status savePrivateMessage(::grpc::ServerContext* /*context*/, const ::net_service::PublicMessageSave* /*request*/, ::net_service::Token* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsavePrivateMessage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::Token,::net_service::Token>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedsavePrivateMessage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::PublicMessageSave,::net_service::Token>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getPrivateMessages : public BaseClass {
@@ -1307,7 +1150,7 @@ class net_service final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getPrivateMessages() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::net_service::MsgPos, ::net_service::PrivateMessageLoad>(
             [this](::grpc::ServerContext* context,
@@ -1328,9 +1171,9 @@ class net_service final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetPrivateMessages(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::net_service::MsgPos,::net_service::PrivateMessageLoad>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_signUp<WithStreamedUnaryMethod_signIn<WithStreamedUnaryMethod_signOff<WithStreamedUnaryMethod_getName<WithStreamedUnaryMethod_savePublicMessage<WithStreamedUnaryMethod_getPublicMessagess<WithStreamedUnaryMethod_savePrivateMessage<WithStreamedUnaryMethod_getPrivateMessages<Service > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_signUp<WithStreamedUnaryMethod_signIn<WithStreamedUnaryMethod_signOff<WithStreamedUnaryMethod_savePublicMessage<WithStreamedUnaryMethod_getPublicMessagess<WithStreamedUnaryMethod_savePrivateMessage<WithStreamedUnaryMethod_getPrivateMessages<Service > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_signUp<WithStreamedUnaryMethod_signIn<WithStreamedUnaryMethod_signOff<WithStreamedUnaryMethod_getName<WithStreamedUnaryMethod_savePublicMessage<WithStreamedUnaryMethod_getPublicMessagess<WithStreamedUnaryMethod_savePrivateMessage<WithStreamedUnaryMethod_getPrivateMessages<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_signUp<WithStreamedUnaryMethod_signIn<WithStreamedUnaryMethod_signOff<WithStreamedUnaryMethod_savePublicMessage<WithStreamedUnaryMethod_getPublicMessagess<WithStreamedUnaryMethod_savePrivateMessage<WithStreamedUnaryMethod_getPrivateMessages<Service > > > > > > > StreamedService;
 };
 
 }  // namespace net_service
