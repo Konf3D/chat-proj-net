@@ -1,17 +1,20 @@
 #pragma once
-#include <grpc++/grpc++.h>
 #include <iostream>
+
+#include <grpc++/grpc++.h>
+
 #include "../proto/net_service.grpc.pb.h"
 
 class ChatServer : public net_service::net_service::Service
 {
+    
 };
 
 inline void runServer()
 {
     std::string server_address{ "localhost:55777" };
     ChatServer service;
-
+    
     // Build server
     grpc::ServerBuilder server;
 
