@@ -110,26 +110,52 @@ grpc::Status ChatServer::savePublicMessage(::grpc::ServerContext* context, const
 
 grpc::Status ChatServer::getPublicMessages(::grpc::ServerContext* context, const::net_service::Token* request, ::net_service::PublicMessageLoad* response)
 {
-    //std::vector<PublicMessage> publicMessages
-    return grpc::Status();
+    std::vector<PublicMessage*> publicMessages;
+    std::string login;
+    
+    for (const auto& element : _tokens)
+    {
+        if (element.token == request->token())
+            login = element.login;
+
+    }
+    if (login.empty())
+        return grpc::Status::OK;
+    for (const auto& element : _publicMessages)
+    {
+        response->add_content(element.content);
+        response->add_sender(element.sender);
+    }
+    return grpc::Status::OK;
 }
 
 grpc::Status ChatServer::savePrivateMessage(::grpc::ServerContext* context, const::net_service::PrivateMessageSave* request, ::net_service::Token* response)
 {
+    response->set_result(false);
     auto isSenderPresent = [&request](const User& user)
     {
         return request->sender() == user.username;
     };
+    const auto sender = std::find_if(_users.begin(), _users.end(), isSenderPresent);
     auto isRecieverPresent = [&request](const User& user)
     {
         return request->reciever() == user.username;
     };
+    const auto reciver = std::find_if(_users.begin(), _users.end(), isRecieverPresent);
+
+    auto isTokenPresent = [&request](const TokenLoginPair& tokenPair)
+    {
+        //return request-> == tokenPair.token;
+    };
+    const auto token = std::find_if(_tokens.begin(), _tokens.end(), isTokenPresent);
+    if (sender == _users.end() || token == _tokens.end())
+        return grpc::Status::OK;
     return grpc::Status::OK;
 }
 
 grpc::Status ChatServer::getPrivateMessages(::grpc::ServerContext* context, const::net_service::Token* request, ::net_service::PrivateMessageLoad* response)
 {
-    return grpc::Status();
+
 }
 
 std::string random_string(std::size_t length)
