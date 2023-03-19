@@ -95,10 +95,9 @@ struct PublicMessageSaveDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PublicMessageSaveDefaultTypeInternal _PublicMessageSave_default_instance_;
 PROTOBUF_CONSTEXPR PublicMessageLoad::PublicMessageLoad(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sender_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.position_)*/int64_t{0}
+    /*decltype(_impl_.sender_)*/{}
+  , /*decltype(_impl_.content_)*/{}
+  , /*decltype(_impl_.token_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PublicMessageLoadDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PublicMessageLoadDefaultTypeInternal()
@@ -114,7 +113,6 @@ PROTOBUF_CONSTEXPR PrivateMessageSave::PrivateMessageSave(
     /*decltype(_impl_.sender_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.reciever_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PrivateMessageSaveDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PrivateMessageSaveDefaultTypeInternal()
@@ -127,11 +125,9 @@ struct PrivateMessageSaveDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PrivateMessageSaveDefaultTypeInternal _PrivateMessageSave_default_instance_;
 PROTOBUF_CONSTEXPR PrivateMessageLoad::PrivateMessageLoad(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sender_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.reciever_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.position_)*/int64_t{0}
+    /*decltype(_impl_.sender_)*/{}
+  , /*decltype(_impl_.content_)*/{}
+  , /*decltype(_impl_.reciever_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PrivateMessageLoadDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PrivateMessageLoadDefaultTypeInternal()
@@ -198,7 +194,6 @@ const uint32_t TableStruct_net_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.sender_),
   PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.content_),
-  PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.position_),
   PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageSave, _internal_metadata_),
@@ -209,7 +204,6 @@ const uint32_t TableStruct_net_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VAR
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageSave, _impl_.sender_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageSave, _impl_.content_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageSave, _impl_.reciever_),
-  PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageSave, _impl_.token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -219,8 +213,6 @@ const uint32_t TableStruct_net_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VAR
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.sender_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.content_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.reciever_),
-  PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.position_),
-  PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.token_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::net_service::Token)},
@@ -229,8 +221,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 25, -1, -1, sizeof(::net_service::MsgPos)},
   { 33, -1, -1, sizeof(::net_service::PublicMessageSave)},
   { 42, -1, -1, sizeof(::net_service::PublicMessageLoad)},
-  { 52, -1, -1, sizeof(::net_service::PrivateMessageSave)},
-  { 62, -1, -1, sizeof(::net_service::PrivateMessageLoad)},
+  { 51, -1, -1, sizeof(::net_service::PrivateMessageSave)},
+  { 60, -1, -1, sizeof(::net_service::PrivateMessageLoad)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -252,31 +244,29 @@ const char descriptor_table_protodef_net_5fservice_2eproto[] PROTOBUF_SECTION_VA
   "\n\010username\030\002 \001(\t\022\014\n\004hash\030\003 \001(\t\"$\n\006MsgPos"
   "\022\r\n\005token\030\001 \001(\t\022\013\n\003pos\030\002 \001(\003\"C\n\021PublicMe"
   "ssageSave\022\016\n\006sender\030\001 \001(\t\022\017\n\007content\030\002 \001"
-  "(\t\022\r\n\005token\030\003 \001(\t\"U\n\021PublicMessageLoad\022\016"
-  "\n\006sender\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\020\n\010posit"
-  "ion\030\003 \001(\003\022\r\n\005token\030\004 \001(\t\"V\n\022PrivateMessa"
-  "geSave\022\016\n\006sender\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022"
-  "\020\n\010reciever\030\003 \001(\t\022\r\n\005token\030\004 \001(\t\"h\n\022Priv"
-  "ateMessageLoad\022\016\n\006sender\030\001 \001(\t\022\017\n\007conten"
-  "t\030\002 \001(\t\022\020\n\010reciever\030\003 \001(\t\022\020\n\010position\030\004 "
-  "\001(\003\022\r\n\005token\030\005 \001(\t2\365\003\n\013net_service\022>\n\006si"
-  "gnUp\022\036.net_service.CredentialsSignUp\032\022.n"
-  "et_service.Token\"\000\022>\n\006signIn\022\036.net_servi"
-  "ce.CredentialsSignIn\032\022.net_service.Token"
-  "\"\000\0223\n\007signOff\022\022.net_service.Token\032\022.net_"
-  "service.Token\"\000\022I\n\021savePublicMessage\022\036.n"
-  "et_service.PublicMessageSave\032\022.net_servi"
-  "ce.Token\"\000\022K\n\022getPublicMessagess\022\023.net_s"
-  "ervice.MsgPos\032\036.net_service.PublicMessag"
-  "eLoad\"\000\022K\n\022savePrivateMessage\022\037.net_serv"
-  "ice.PrivateMessageSave\032\022.net_service.Tok"
-  "en\"\000\022L\n\022getPrivateMessages\022\023.net_service"
-  ".MsgPos\032\037.net_service.PrivateMessageLoad"
-  "\"\000b\006proto3"
+  "(\t\022\r\n\005token\030\003 \001(\t\"C\n\021PublicMessageLoad\022\016"
+  "\n\006sender\030\001 \003(\t\022\017\n\007content\030\002 \003(\t\022\r\n\005token"
+  "\030\004 \003(\t\"G\n\022PrivateMessageSave\022\016\n\006sender\030\001"
+  " \001(\t\022\017\n\007content\030\002 \001(\t\022\020\n\010reciever\030\003 \001(\t\""
+  "G\n\022PrivateMessageLoad\022\016\n\006sender\030\001 \003(\t\022\017\n"
+  "\007content\030\002 \003(\t\022\020\n\010reciever\030\003 \003(\t2\362\003\n\013net"
+  "_service\022>\n\006signUp\022\036.net_service.Credent"
+  "ialsSignUp\032\022.net_service.Token\"\000\022>\n\006sign"
+  "In\022\036.net_service.CredentialsSignIn\032\022.net"
+  "_service.Token\"\000\0223\n\007signOff\022\022.net_servic"
+  "e.Token\032\022.net_service.Token\"\000\022I\n\021savePub"
+  "licMessage\022\036.net_service.PublicMessageSa"
+  "ve\032\022.net_service.Token\"\000\022I\n\021getPublicMes"
+  "sages\022\022.net_service.Token\032\036.net_service."
+  "PublicMessageLoad\"\000\022K\n\022savePrivateMessag"
+  "e\022\037.net_service.PrivateMessageSave\032\022.net"
+  "_service.Token\"\000\022K\n\022getPrivateMessages\022\022"
+  ".net_service.Token\032\037.net_service.Private"
+  "MessageLoad\"\000b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_net_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_net_5fservice_2eproto = {
-    false, false, 1090, descriptor_table_protodef_net_5fservice_2eproto,
+    false, false, 1021, descriptor_table_protodef_net_5fservice_2eproto,
     "net_service.proto",
     &descriptor_table_net_5fservice_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_net_5fservice_2eproto::offsets,
@@ -1626,38 +1616,12 @@ PublicMessageLoad::PublicMessageLoad(const PublicMessageLoad& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   PublicMessageLoad* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
-    , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){}
+      decltype(_impl_.sender_){from._impl_.sender_}
+    , decltype(_impl_.content_){from._impl_.content_}
+    , decltype(_impl_.token_){from._impl_.token_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_sender().empty()) {
-    _this->_impl_.sender_.Set(from._internal_sender(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_content().empty()) {
-    _this->_impl_.content_.Set(from._internal_content(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.position_ = from._impl_.position_;
   // @@protoc_insertion_point(copy_constructor:net_service.PublicMessageLoad)
 }
 
@@ -1666,24 +1630,11 @@ inline void PublicMessageLoad::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
-    , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){int64_t{0}}
+      decltype(_impl_.sender_){arena}
+    , decltype(_impl_.content_){arena}
+    , decltype(_impl_.token_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 PublicMessageLoad::~PublicMessageLoad() {
@@ -1697,9 +1648,9 @@ PublicMessageLoad::~PublicMessageLoad() {
 
 inline void PublicMessageLoad::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.sender_.Destroy();
-  _impl_.content_.Destroy();
-  _impl_.token_.Destroy();
+  _impl_.sender_.~RepeatedPtrField();
+  _impl_.content_.~RepeatedPtrField();
+  _impl_.token_.~RepeatedPtrField();
 }
 
 void PublicMessageLoad::SetCachedSize(int size) const {
@@ -1712,10 +1663,9 @@ void PublicMessageLoad::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.sender_.ClearToEmpty();
-  _impl_.content_.ClearToEmpty();
-  _impl_.token_.ClearToEmpty();
-  _impl_.position_ = int64_t{0};
+  _impl_.sender_.Clear();
+  _impl_.content_.Clear();
+  _impl_.token_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1725,41 +1675,48 @@ const char* PublicMessageLoad::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string sender = 1;
+      // repeated string sender = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_sender();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.sender"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_sender();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.sender"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // string content = 2;
+      // repeated string content = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_content();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.content"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_content();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.content"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // int64 position = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.position_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 4;
+      // repeated string token = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.token"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_token();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.token"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -1792,40 +1749,34 @@ uint8_t* PublicMessageLoad::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
+  // repeated string sender = 1;
+  for (int i = 0, n = this->_internal_sender_size(); i < n; i++) {
+    const auto& s = this->_internal_sender(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sender().data(), static_cast<int>(this->_internal_sender().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PublicMessageLoad.sender");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_sender(), target);
+    target = stream->WriteString(1, s, target);
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
+  // repeated string content = 2;
+  for (int i = 0, n = this->_internal_content_size(); i < n; i++) {
+    const auto& s = this->_internal_content(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PublicMessageLoad.content");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_content(), target);
+    target = stream->WriteString(2, s, target);
   }
 
-  // int64 position = 3;
-  if (this->_internal_position() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_position(), target);
-  }
-
-  // string token = 4;
-  if (!this->_internal_token().empty()) {
+  // repeated string token = 4;
+  for (int i = 0, n = this->_internal_token_size(); i < n; i++) {
+    const auto& s = this->_internal_token(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PublicMessageLoad.token");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_token(), target);
+    target = stream->WriteString(4, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1844,30 +1795,28 @@ size_t PublicMessageLoad::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sender());
+  // repeated string sender = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.sender_.size());
+  for (int i = 0, n = _impl_.sender_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.sender_.Get(i));
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_content());
+  // repeated string content = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.content_.size());
+  for (int i = 0, n = _impl_.content_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.content_.Get(i));
   }
 
-  // string token = 4;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
-  // int64 position = 3;
-  if (this->_internal_position() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_position());
+  // repeated string token = 4;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.token_.size());
+  for (int i = 0, n = _impl_.token_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.token_.Get(i));
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1888,18 +1837,9 @@ void PublicMessageLoad::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_sender().empty()) {
-    _this->_internal_set_sender(from._internal_sender());
-  }
-  if (!from._internal_content().empty()) {
-    _this->_internal_set_content(from._internal_content());
-  }
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
-  }
-  if (from._internal_position() != 0) {
-    _this->_internal_set_position(from._internal_position());
-  }
+  _this->_impl_.sender_.MergeFrom(from._impl_.sender_);
+  _this->_impl_.content_.MergeFrom(from._impl_.content_);
+  _this->_impl_.token_.MergeFrom(from._impl_.token_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1916,22 +1856,10 @@ bool PublicMessageLoad::IsInitialized() const {
 
 void PublicMessageLoad::InternalSwap(PublicMessageLoad* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.sender_, lhs_arena,
-      &other->_impl_.sender_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.content_, lhs_arena,
-      &other->_impl_.content_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
-  swap(_impl_.position_, other->_impl_.position_);
+  _impl_.sender_.InternalSwap(&other->_impl_.sender_);
+  _impl_.content_.InternalSwap(&other->_impl_.content_);
+  _impl_.token_.InternalSwap(&other->_impl_.token_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PublicMessageLoad::GetMetadata() const {
@@ -1959,7 +1887,6 @@ PrivateMessageSave::PrivateMessageSave(const PrivateMessageSave& from)
       decltype(_impl_.sender_){}
     , decltype(_impl_.content_){}
     , decltype(_impl_.reciever_){}
-    , decltype(_impl_.token_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1987,14 +1914,6 @@ PrivateMessageSave::PrivateMessageSave(const PrivateMessageSave& from)
     _this->_impl_.reciever_.Set(from._internal_reciever(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:net_service.PrivateMessageSave)
 }
 
@@ -2006,7 +1925,6 @@ inline void PrivateMessageSave::SharedCtor(
       decltype(_impl_.sender_){}
     , decltype(_impl_.content_){}
     , decltype(_impl_.reciever_){}
-    , decltype(_impl_.token_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sender_.InitDefault();
@@ -2020,10 +1938,6 @@ inline void PrivateMessageSave::SharedCtor(
   _impl_.reciever_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.reciever_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -2041,7 +1955,6 @@ inline void PrivateMessageSave::SharedDtor() {
   _impl_.sender_.Destroy();
   _impl_.content_.Destroy();
   _impl_.reciever_.Destroy();
-  _impl_.token_.Destroy();
 }
 
 void PrivateMessageSave::SetCachedSize(int size) const {
@@ -2057,7 +1970,6 @@ void PrivateMessageSave::Clear() {
   _impl_.sender_.ClearToEmpty();
   _impl_.content_.ClearToEmpty();
   _impl_.reciever_.ClearToEmpty();
-  _impl_.token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2094,16 +2006,6 @@ const char* PrivateMessageSave::_InternalParse(const char* ptr, ::_pbi::ParseCon
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageSave.reciever"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageSave.token"));
         } else
           goto handle_unusual;
         continue;
@@ -2166,16 +2068,6 @@ uint8_t* PrivateMessageSave::_InternalSerialize(
         3, this->_internal_reciever(), target);
   }
 
-  // string token = 4;
-  if (!this->_internal_token().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.PrivateMessageSave.token");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_token(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2213,13 +2105,6 @@ size_t PrivateMessageSave::ByteSizeLong() const {
         this->_internal_reciever());
   }
 
-  // string token = 4;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -2246,9 +2131,6 @@ void PrivateMessageSave::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   }
   if (!from._internal_reciever().empty()) {
     _this->_internal_set_reciever(from._internal_reciever());
-  }
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2281,10 +2163,6 @@ void PrivateMessageSave::InternalSwap(PrivateMessageSave* other) {
       &_impl_.reciever_, lhs_arena,
       &other->_impl_.reciever_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessageSave::GetMetadata() const {
@@ -2309,47 +2187,12 @@ PrivateMessageLoad::PrivateMessageLoad(const PrivateMessageLoad& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   PrivateMessageLoad* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
-    , decltype(_impl_.reciever_){}
-    , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){}
+      decltype(_impl_.sender_){from._impl_.sender_}
+    , decltype(_impl_.content_){from._impl_.content_}
+    , decltype(_impl_.reciever_){from._impl_.reciever_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_sender().empty()) {
-    _this->_impl_.sender_.Set(from._internal_sender(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_content().empty()) {
-    _this->_impl_.content_.Set(from._internal_content(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.reciever_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.reciever_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_reciever().empty()) {
-    _this->_impl_.reciever_.Set(from._internal_reciever(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.position_ = from._impl_.position_;
   // @@protoc_insertion_point(copy_constructor:net_service.PrivateMessageLoad)
 }
 
@@ -2358,29 +2201,11 @@ inline void PrivateMessageLoad::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
-    , decltype(_impl_.reciever_){}
-    , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){int64_t{0}}
+      decltype(_impl_.sender_){arena}
+    , decltype(_impl_.content_){arena}
+    , decltype(_impl_.reciever_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.reciever_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.reciever_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 PrivateMessageLoad::~PrivateMessageLoad() {
@@ -2394,10 +2219,9 @@ PrivateMessageLoad::~PrivateMessageLoad() {
 
 inline void PrivateMessageLoad::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.sender_.Destroy();
-  _impl_.content_.Destroy();
-  _impl_.reciever_.Destroy();
-  _impl_.token_.Destroy();
+  _impl_.sender_.~RepeatedPtrField();
+  _impl_.content_.~RepeatedPtrField();
+  _impl_.reciever_.~RepeatedPtrField();
 }
 
 void PrivateMessageLoad::SetCachedSize(int size) const {
@@ -2410,11 +2234,9 @@ void PrivateMessageLoad::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.sender_.ClearToEmpty();
-  _impl_.content_.ClearToEmpty();
-  _impl_.reciever_.ClearToEmpty();
-  _impl_.token_.ClearToEmpty();
-  _impl_.position_ = int64_t{0};
+  _impl_.sender_.Clear();
+  _impl_.content_.Clear();
+  _impl_.reciever_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2424,51 +2246,48 @@ const char* PrivateMessageLoad::_InternalParse(const char* ptr, ::_pbi::ParseCon
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string sender = 1;
+      // repeated string sender = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_sender();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.sender"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_sender();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.sender"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // string content = 2;
+      // repeated string content = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_content();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.content"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_content();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.content"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // string reciever = 3;
+      // repeated string reciever = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_reciever();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.reciever"));
-        } else
-          goto handle_unusual;
-        continue;
-      // int64 position = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.position_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.token"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_reciever();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.reciever"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -2501,50 +2320,34 @@ uint8_t* PrivateMessageLoad::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
+  // repeated string sender = 1;
+  for (int i = 0, n = this->_internal_sender_size(); i < n; i++) {
+    const auto& s = this->_internal_sender(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sender().data(), static_cast<int>(this->_internal_sender().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.sender");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_sender(), target);
+    target = stream->WriteString(1, s, target);
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
+  // repeated string content = 2;
+  for (int i = 0, n = this->_internal_content_size(); i < n; i++) {
+    const auto& s = this->_internal_content(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.content");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_content(), target);
+    target = stream->WriteString(2, s, target);
   }
 
-  // string reciever = 3;
-  if (!this->_internal_reciever().empty()) {
+  // repeated string reciever = 3;
+  for (int i = 0, n = this->_internal_reciever_size(); i < n; i++) {
+    const auto& s = this->_internal_reciever(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_reciever().data(), static_cast<int>(this->_internal_reciever().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.reciever");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_reciever(), target);
-  }
-
-  // int64 position = 4;
-  if (this->_internal_position() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(4, this->_internal_position(), target);
-  }
-
-  // string token = 5;
-  if (!this->_internal_token().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.PrivateMessageLoad.token");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_token(), target);
+    target = stream->WriteString(3, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2563,37 +2366,28 @@ size_t PrivateMessageLoad::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sender());
+  // repeated string sender = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.sender_.size());
+  for (int i = 0, n = _impl_.sender_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.sender_.Get(i));
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_content());
+  // repeated string content = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.content_.size());
+  for (int i = 0, n = _impl_.content_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.content_.Get(i));
   }
 
-  // string reciever = 3;
-  if (!this->_internal_reciever().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_reciever());
-  }
-
-  // string token = 5;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
-  // int64 position = 4;
-  if (this->_internal_position() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_position());
+  // repeated string reciever = 3;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.reciever_.size());
+  for (int i = 0, n = _impl_.reciever_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.reciever_.Get(i));
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2614,21 +2408,9 @@ void PrivateMessageLoad::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_sender().empty()) {
-    _this->_internal_set_sender(from._internal_sender());
-  }
-  if (!from._internal_content().empty()) {
-    _this->_internal_set_content(from._internal_content());
-  }
-  if (!from._internal_reciever().empty()) {
-    _this->_internal_set_reciever(from._internal_reciever());
-  }
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
-  }
-  if (from._internal_position() != 0) {
-    _this->_internal_set_position(from._internal_position());
-  }
+  _this->_impl_.sender_.MergeFrom(from._impl_.sender_);
+  _this->_impl_.content_.MergeFrom(from._impl_.content_);
+  _this->_impl_.reciever_.MergeFrom(from._impl_.reciever_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2645,26 +2427,10 @@ bool PrivateMessageLoad::IsInitialized() const {
 
 void PrivateMessageLoad::InternalSwap(PrivateMessageLoad* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.sender_, lhs_arena,
-      &other->_impl_.sender_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.content_, lhs_arena,
-      &other->_impl_.content_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.reciever_, lhs_arena,
-      &other->_impl_.reciever_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
-  swap(_impl_.position_, other->_impl_.position_);
+  _impl_.sender_.InternalSwap(&other->_impl_.sender_);
+  _impl_.content_.InternalSwap(&other->_impl_.content_);
+  _impl_.reciever_.InternalSwap(&other->_impl_.reciever_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessageLoad::GetMetadata() const {

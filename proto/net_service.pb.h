@@ -1075,57 +1075,77 @@ class PublicMessageLoad final :
     kSenderFieldNumber = 1,
     kContentFieldNumber = 2,
     kTokenFieldNumber = 4,
-    kPositionFieldNumber = 3,
   };
-  // string sender = 1;
+  // repeated string sender = 1;
+  int sender_size() const;
+  private:
+  int _internal_sender_size() const;
+  public:
   void clear_sender();
-  const std::string& sender() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_sender(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_sender();
-  PROTOBUF_NODISCARD std::string* release_sender();
-  void set_allocated_sender(std::string* sender);
+  const std::string& sender(int index) const;
+  std::string* mutable_sender(int index);
+  void set_sender(int index, const std::string& value);
+  void set_sender(int index, std::string&& value);
+  void set_sender(int index, const char* value);
+  void set_sender(int index, const char* value, size_t size);
+  std::string* add_sender();
+  void add_sender(const std::string& value);
+  void add_sender(std::string&& value);
+  void add_sender(const char* value);
+  void add_sender(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& sender() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_sender();
   private:
-  const std::string& _internal_sender() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sender(const std::string& value);
-  std::string* _internal_mutable_sender();
+  const std::string& _internal_sender(int index) const;
+  std::string* _internal_add_sender();
   public:
 
-  // string content = 2;
+  // repeated string content = 2;
+  int content_size() const;
+  private:
+  int _internal_content_size() const;
+  public:
   void clear_content();
-  const std::string& content() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_content(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_content();
-  PROTOBUF_NODISCARD std::string* release_content();
-  void set_allocated_content(std::string* content);
+  const std::string& content(int index) const;
+  std::string* mutable_content(int index);
+  void set_content(int index, const std::string& value);
+  void set_content(int index, std::string&& value);
+  void set_content(int index, const char* value);
+  void set_content(int index, const char* value, size_t size);
+  std::string* add_content();
+  void add_content(const std::string& value);
+  void add_content(std::string&& value);
+  void add_content(const char* value);
+  void add_content(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& content() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_content();
   private:
-  const std::string& _internal_content() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(const std::string& value);
-  std::string* _internal_mutable_content();
+  const std::string& _internal_content(int index) const;
+  std::string* _internal_add_content();
   public:
 
-  // string token = 4;
+  // repeated string token = 4;
+  int token_size() const;
+  private:
+  int _internal_token_size() const;
+  public:
   void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
+  const std::string& token(int index) const;
+  std::string* mutable_token(int index);
+  void set_token(int index, const std::string& value);
+  void set_token(int index, std::string&& value);
+  void set_token(int index, const char* value);
+  void set_token(int index, const char* value, size_t size);
+  std::string* add_token();
+  void add_token(const std::string& value);
+  void add_token(std::string&& value);
+  void add_token(const char* value);
+  void add_token(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& token() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_token();
   private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
-  // int64 position = 3;
-  void clear_position();
-  int64_t position() const;
-  void set_position(int64_t value);
-  private:
-  int64_t _internal_position() const;
-  void _internal_set_position(int64_t value);
+  const std::string& _internal_token(int index) const;
+  std::string* _internal_add_token();
   public:
 
   // @@protoc_insertion_point(class_scope:net_service.PublicMessageLoad)
@@ -1136,10 +1156,9 @@ class PublicMessageLoad final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sender_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    int64_t position_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> sender_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> content_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> token_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1271,7 +1290,6 @@ class PrivateMessageSave final :
     kSenderFieldNumber = 1,
     kContentFieldNumber = 2,
     kRecieverFieldNumber = 3,
-    kTokenFieldNumber = 4,
   };
   // string sender = 1;
   void clear_sender();
@@ -1315,20 +1333,6 @@ class PrivateMessageSave final :
   std::string* _internal_mutable_reciever();
   public:
 
-  // string token = 4;
-  void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
-  private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
   // @@protoc_insertion_point(class_scope:net_service.PrivateMessageSave)
  private:
   class _Internal;
@@ -1340,7 +1344,6 @@ class PrivateMessageSave final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sender_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reciever_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1472,72 +1475,77 @@ class PrivateMessageLoad final :
     kSenderFieldNumber = 1,
     kContentFieldNumber = 2,
     kRecieverFieldNumber = 3,
-    kTokenFieldNumber = 5,
-    kPositionFieldNumber = 4,
   };
-  // string sender = 1;
+  // repeated string sender = 1;
+  int sender_size() const;
+  private:
+  int _internal_sender_size() const;
+  public:
   void clear_sender();
-  const std::string& sender() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_sender(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_sender();
-  PROTOBUF_NODISCARD std::string* release_sender();
-  void set_allocated_sender(std::string* sender);
+  const std::string& sender(int index) const;
+  std::string* mutable_sender(int index);
+  void set_sender(int index, const std::string& value);
+  void set_sender(int index, std::string&& value);
+  void set_sender(int index, const char* value);
+  void set_sender(int index, const char* value, size_t size);
+  std::string* add_sender();
+  void add_sender(const std::string& value);
+  void add_sender(std::string&& value);
+  void add_sender(const char* value);
+  void add_sender(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& sender() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_sender();
   private:
-  const std::string& _internal_sender() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sender(const std::string& value);
-  std::string* _internal_mutable_sender();
+  const std::string& _internal_sender(int index) const;
+  std::string* _internal_add_sender();
   public:
 
-  // string content = 2;
+  // repeated string content = 2;
+  int content_size() const;
+  private:
+  int _internal_content_size() const;
+  public:
   void clear_content();
-  const std::string& content() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_content(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_content();
-  PROTOBUF_NODISCARD std::string* release_content();
-  void set_allocated_content(std::string* content);
+  const std::string& content(int index) const;
+  std::string* mutable_content(int index);
+  void set_content(int index, const std::string& value);
+  void set_content(int index, std::string&& value);
+  void set_content(int index, const char* value);
+  void set_content(int index, const char* value, size_t size);
+  std::string* add_content();
+  void add_content(const std::string& value);
+  void add_content(std::string&& value);
+  void add_content(const char* value);
+  void add_content(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& content() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_content();
   private:
-  const std::string& _internal_content() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(const std::string& value);
-  std::string* _internal_mutable_content();
+  const std::string& _internal_content(int index) const;
+  std::string* _internal_add_content();
   public:
 
-  // string reciever = 3;
+  // repeated string reciever = 3;
+  int reciever_size() const;
+  private:
+  int _internal_reciever_size() const;
+  public:
   void clear_reciever();
-  const std::string& reciever() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_reciever(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_reciever();
-  PROTOBUF_NODISCARD std::string* release_reciever();
-  void set_allocated_reciever(std::string* reciever);
+  const std::string& reciever(int index) const;
+  std::string* mutable_reciever(int index);
+  void set_reciever(int index, const std::string& value);
+  void set_reciever(int index, std::string&& value);
+  void set_reciever(int index, const char* value);
+  void set_reciever(int index, const char* value, size_t size);
+  std::string* add_reciever();
+  void add_reciever(const std::string& value);
+  void add_reciever(std::string&& value);
+  void add_reciever(const char* value);
+  void add_reciever(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& reciever() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_reciever();
   private:
-  const std::string& _internal_reciever() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reciever(const std::string& value);
-  std::string* _internal_mutable_reciever();
-  public:
-
-  // string token = 5;
-  void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
-  private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
-  // int64 position = 4;
-  void clear_position();
-  int64_t position() const;
-  void set_position(int64_t value);
-  private:
-  int64_t _internal_position() const;
-  void _internal_set_position(int64_t value);
+  const std::string& _internal_reciever(int index) const;
+  std::string* _internal_add_reciever();
   public:
 
   // @@protoc_insertion_point(class_scope:net_service.PrivateMessageLoad)
@@ -1548,11 +1556,9 @@ class PrivateMessageLoad final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sender_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reciever_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    int64_t position_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> sender_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> content_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> reciever_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2129,174 +2135,229 @@ inline void PublicMessageSave::set_allocated_token(std::string* token) {
 
 // PublicMessageLoad
 
-// string sender = 1;
+// repeated string sender = 1;
+inline int PublicMessageLoad::_internal_sender_size() const {
+  return _impl_.sender_.size();
+}
+inline int PublicMessageLoad::sender_size() const {
+  return _internal_sender_size();
+}
 inline void PublicMessageLoad::clear_sender() {
-  _impl_.sender_.ClearToEmpty();
+  _impl_.sender_.Clear();
 }
-inline const std::string& PublicMessageLoad::sender() const {
+inline std::string* PublicMessageLoad::add_sender() {
+  std::string* _s = _internal_add_sender();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PublicMessageLoad.sender)
+  return _s;
+}
+inline const std::string& PublicMessageLoad::_internal_sender(int index) const {
+  return _impl_.sender_.Get(index);
+}
+inline const std::string& PublicMessageLoad::sender(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.sender)
-  return _internal_sender();
+  return _internal_sender(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PublicMessageLoad::set_sender(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.sender_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PublicMessageLoad::mutable_sender(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.sender)
+  return _impl_.sender_.Mutable(index);
+}
+inline void PublicMessageLoad::set_sender(int index, const std::string& value) {
+  _impl_.sender_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.sender)
 }
-inline std::string* PublicMessageLoad::mutable_sender() {
-  std::string* _s = _internal_mutable_sender();
-  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.sender)
-  return _s;
+inline void PublicMessageLoad::set_sender(int index, std::string&& value) {
+  _impl_.sender_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.sender)
 }
-inline const std::string& PublicMessageLoad::_internal_sender() const {
-  return _impl_.sender_.Get();
+inline void PublicMessageLoad::set_sender(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PublicMessageLoad.sender)
 }
-inline void PublicMessageLoad::_internal_set_sender(const std::string& value) {
-  
-  _impl_.sender_.Set(value, GetArenaForAllocation());
+inline void PublicMessageLoad::set_sender(int index, const char* value, size_t size) {
+  _impl_.sender_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PublicMessageLoad.sender)
 }
-inline std::string* PublicMessageLoad::_internal_mutable_sender() {
-  
-  return _impl_.sender_.Mutable(GetArenaForAllocation());
+inline std::string* PublicMessageLoad::_internal_add_sender() {
+  return _impl_.sender_.Add();
 }
-inline std::string* PublicMessageLoad::release_sender() {
-  // @@protoc_insertion_point(field_release:net_service.PublicMessageLoad.sender)
-  return _impl_.sender_.Release();
+inline void PublicMessageLoad::add_sender(const std::string& value) {
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.sender)
 }
-inline void PublicMessageLoad::set_allocated_sender(std::string* sender) {
-  if (sender != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.sender_.SetAllocated(sender, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.sender_.IsDefault()) {
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PublicMessageLoad.sender)
+inline void PublicMessageLoad::add_sender(std::string&& value) {
+  _impl_.sender_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.sender)
+}
+inline void PublicMessageLoad::add_sender(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PublicMessageLoad.sender)
+}
+inline void PublicMessageLoad::add_sender(const char* value, size_t size) {
+  _impl_.sender_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PublicMessageLoad.sender)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PublicMessageLoad::sender() const {
+  // @@protoc_insertion_point(field_list:net_service.PublicMessageLoad.sender)
+  return _impl_.sender_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PublicMessageLoad::mutable_sender() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PublicMessageLoad.sender)
+  return &_impl_.sender_;
 }
 
-// string content = 2;
+// repeated string content = 2;
+inline int PublicMessageLoad::_internal_content_size() const {
+  return _impl_.content_.size();
+}
+inline int PublicMessageLoad::content_size() const {
+  return _internal_content_size();
+}
 inline void PublicMessageLoad::clear_content() {
-  _impl_.content_.ClearToEmpty();
+  _impl_.content_.Clear();
 }
-inline const std::string& PublicMessageLoad::content() const {
+inline std::string* PublicMessageLoad::add_content() {
+  std::string* _s = _internal_add_content();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PublicMessageLoad.content)
+  return _s;
+}
+inline const std::string& PublicMessageLoad::_internal_content(int index) const {
+  return _impl_.content_.Get(index);
+}
+inline const std::string& PublicMessageLoad::content(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.content)
-  return _internal_content();
+  return _internal_content(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PublicMessageLoad::set_content(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.content_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PublicMessageLoad::mutable_content(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.content)
+  return _impl_.content_.Mutable(index);
+}
+inline void PublicMessageLoad::set_content(int index, const std::string& value) {
+  _impl_.content_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.content)
 }
-inline std::string* PublicMessageLoad::mutable_content() {
-  std::string* _s = _internal_mutable_content();
-  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.content)
+inline void PublicMessageLoad::set_content(int index, std::string&& value) {
+  _impl_.content_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.content)
+}
+inline void PublicMessageLoad::set_content(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PublicMessageLoad.content)
+}
+inline void PublicMessageLoad::set_content(int index, const char* value, size_t size) {
+  _impl_.content_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PublicMessageLoad.content)
+}
+inline std::string* PublicMessageLoad::_internal_add_content() {
+  return _impl_.content_.Add();
+}
+inline void PublicMessageLoad::add_content(const std::string& value) {
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.content)
+}
+inline void PublicMessageLoad::add_content(std::string&& value) {
+  _impl_.content_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.content)
+}
+inline void PublicMessageLoad::add_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PublicMessageLoad.content)
+}
+inline void PublicMessageLoad::add_content(const char* value, size_t size) {
+  _impl_.content_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PublicMessageLoad.content)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PublicMessageLoad::content() const {
+  // @@protoc_insertion_point(field_list:net_service.PublicMessageLoad.content)
+  return _impl_.content_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PublicMessageLoad::mutable_content() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PublicMessageLoad.content)
+  return &_impl_.content_;
+}
+
+// repeated string token = 4;
+inline int PublicMessageLoad::_internal_token_size() const {
+  return _impl_.token_.size();
+}
+inline int PublicMessageLoad::token_size() const {
+  return _internal_token_size();
+}
+inline void PublicMessageLoad::clear_token() {
+  _impl_.token_.Clear();
+}
+inline std::string* PublicMessageLoad::add_token() {
+  std::string* _s = _internal_add_token();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PublicMessageLoad.token)
   return _s;
 }
-inline const std::string& PublicMessageLoad::_internal_content() const {
-  return _impl_.content_.Get();
+inline const std::string& PublicMessageLoad::_internal_token(int index) const {
+  return _impl_.token_.Get(index);
 }
-inline void PublicMessageLoad::_internal_set_content(const std::string& value) {
-  
-  _impl_.content_.Set(value, GetArenaForAllocation());
-}
-inline std::string* PublicMessageLoad::_internal_mutable_content() {
-  
-  return _impl_.content_.Mutable(GetArenaForAllocation());
-}
-inline std::string* PublicMessageLoad::release_content() {
-  // @@protoc_insertion_point(field_release:net_service.PublicMessageLoad.content)
-  return _impl_.content_.Release();
-}
-inline void PublicMessageLoad::set_allocated_content(std::string* content) {
-  if (content != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.content_.SetAllocated(content, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.content_.IsDefault()) {
-    _impl_.content_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PublicMessageLoad.content)
-}
-
-// int64 position = 3;
-inline void PublicMessageLoad::clear_position() {
-  _impl_.position_ = int64_t{0};
-}
-inline int64_t PublicMessageLoad::_internal_position() const {
-  return _impl_.position_;
-}
-inline int64_t PublicMessageLoad::position() const {
-  // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.position)
-  return _internal_position();
-}
-inline void PublicMessageLoad::_internal_set_position(int64_t value) {
-  
-  _impl_.position_ = value;
-}
-inline void PublicMessageLoad::set_position(int64_t value) {
-  _internal_set_position(value);
-  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.position)
-}
-
-// string token = 4;
-inline void PublicMessageLoad::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& PublicMessageLoad::token() const {
+inline const std::string& PublicMessageLoad::token(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.token)
-  return _internal_token();
+  return _internal_token(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PublicMessageLoad::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PublicMessageLoad::mutable_token(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.token)
+  return _impl_.token_.Mutable(index);
+}
+inline void PublicMessageLoad::set_token(int index, const std::string& value) {
+  _impl_.token_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.token)
 }
-inline std::string* PublicMessageLoad::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.token)
-  return _s;
+inline void PublicMessageLoad::set_token(int index, std::string&& value) {
+  _impl_.token_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.token)
 }
-inline const std::string& PublicMessageLoad::_internal_token() const {
-  return _impl_.token_.Get();
+inline void PublicMessageLoad::set_token(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.token_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PublicMessageLoad.token)
 }
-inline void PublicMessageLoad::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
+inline void PublicMessageLoad::set_token(int index, const char* value, size_t size) {
+  _impl_.token_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PublicMessageLoad.token)
 }
-inline std::string* PublicMessageLoad::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
+inline std::string* PublicMessageLoad::_internal_add_token() {
+  return _impl_.token_.Add();
 }
-inline std::string* PublicMessageLoad::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.PublicMessageLoad.token)
-  return _impl_.token_.Release();
+inline void PublicMessageLoad::add_token(const std::string& value) {
+  _impl_.token_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.token)
 }
-inline void PublicMessageLoad::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PublicMessageLoad.token)
+inline void PublicMessageLoad::add_token(std::string&& value) {
+  _impl_.token_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.token)
+}
+inline void PublicMessageLoad::add_token(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.token_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PublicMessageLoad.token)
+}
+inline void PublicMessageLoad::add_token(const char* value, size_t size) {
+  _impl_.token_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PublicMessageLoad.token)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PublicMessageLoad::token() const {
+  // @@protoc_insertion_point(field_list:net_service.PublicMessageLoad.token)
+  return _impl_.token_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PublicMessageLoad::mutable_token() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PublicMessageLoad.token)
+  return &_impl_.token_;
 }
 
 // -------------------------------------------------------------------
@@ -2453,278 +2514,233 @@ inline void PrivateMessageSave::set_allocated_reciever(std::string* reciever) {
   // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageSave.reciever)
 }
 
-// string token = 4;
-inline void PrivateMessageSave::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& PrivateMessageSave::token() const {
-  // @@protoc_insertion_point(field_get:net_service.PrivateMessageSave.token)
-  return _internal_token();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageSave::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.PrivateMessageSave.token)
-}
-inline std::string* PrivateMessageSave::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageSave.token)
-  return _s;
-}
-inline const std::string& PrivateMessageSave::_internal_token() const {
-  return _impl_.token_.Get();
-}
-inline void PrivateMessageSave::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
-}
-inline std::string* PrivateMessageSave::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
-}
-inline std::string* PrivateMessageSave::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageSave.token)
-  return _impl_.token_.Release();
-}
-inline void PrivateMessageSave::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageSave.token)
-}
-
 // -------------------------------------------------------------------
 
 // PrivateMessageLoad
 
-// string sender = 1;
+// repeated string sender = 1;
+inline int PrivateMessageLoad::_internal_sender_size() const {
+  return _impl_.sender_.size();
+}
+inline int PrivateMessageLoad::sender_size() const {
+  return _internal_sender_size();
+}
 inline void PrivateMessageLoad::clear_sender() {
-  _impl_.sender_.ClearToEmpty();
+  _impl_.sender_.Clear();
 }
-inline const std::string& PrivateMessageLoad::sender() const {
+inline std::string* PrivateMessageLoad::add_sender() {
+  std::string* _s = _internal_add_sender();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PrivateMessageLoad.sender)
+  return _s;
+}
+inline const std::string& PrivateMessageLoad::_internal_sender(int index) const {
+  return _impl_.sender_.Get(index);
+}
+inline const std::string& PrivateMessageLoad::sender(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.sender)
-  return _internal_sender();
+  return _internal_sender(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_sender(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.sender_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::mutable_sender(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.sender)
+  return _impl_.sender_.Mutable(index);
+}
+inline void PrivateMessageLoad::set_sender(int index, const std::string& value) {
+  _impl_.sender_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.sender)
 }
-inline std::string* PrivateMessageLoad::mutable_sender() {
-  std::string* _s = _internal_mutable_sender();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.sender)
-  return _s;
+inline void PrivateMessageLoad::set_sender(int index, std::string&& value) {
+  _impl_.sender_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.sender)
 }
-inline const std::string& PrivateMessageLoad::_internal_sender() const {
-  return _impl_.sender_.Get();
+inline void PrivateMessageLoad::set_sender(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PrivateMessageLoad.sender)
 }
-inline void PrivateMessageLoad::_internal_set_sender(const std::string& value) {
-  
-  _impl_.sender_.Set(value, GetArenaForAllocation());
+inline void PrivateMessageLoad::set_sender(int index, const char* value, size_t size) {
+  _impl_.sender_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PrivateMessageLoad.sender)
 }
-inline std::string* PrivateMessageLoad::_internal_mutable_sender() {
-  
-  return _impl_.sender_.Mutable(GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::_internal_add_sender() {
+  return _impl_.sender_.Add();
 }
-inline std::string* PrivateMessageLoad::release_sender() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.sender)
-  return _impl_.sender_.Release();
+inline void PrivateMessageLoad::add_sender(const std::string& value) {
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.sender)
 }
-inline void PrivateMessageLoad::set_allocated_sender(std::string* sender) {
-  if (sender != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.sender_.SetAllocated(sender, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.sender_.IsDefault()) {
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.sender)
+inline void PrivateMessageLoad::add_sender(std::string&& value) {
+  _impl_.sender_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.sender)
+}
+inline void PrivateMessageLoad::add_sender(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PrivateMessageLoad.sender)
+}
+inline void PrivateMessageLoad::add_sender(const char* value, size_t size) {
+  _impl_.sender_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PrivateMessageLoad.sender)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PrivateMessageLoad::sender() const {
+  // @@protoc_insertion_point(field_list:net_service.PrivateMessageLoad.sender)
+  return _impl_.sender_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PrivateMessageLoad::mutable_sender() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PrivateMessageLoad.sender)
+  return &_impl_.sender_;
 }
 
-// string content = 2;
+// repeated string content = 2;
+inline int PrivateMessageLoad::_internal_content_size() const {
+  return _impl_.content_.size();
+}
+inline int PrivateMessageLoad::content_size() const {
+  return _internal_content_size();
+}
 inline void PrivateMessageLoad::clear_content() {
-  _impl_.content_.ClearToEmpty();
+  _impl_.content_.Clear();
 }
-inline const std::string& PrivateMessageLoad::content() const {
+inline std::string* PrivateMessageLoad::add_content() {
+  std::string* _s = _internal_add_content();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PrivateMessageLoad.content)
+  return _s;
+}
+inline const std::string& PrivateMessageLoad::_internal_content(int index) const {
+  return _impl_.content_.Get(index);
+}
+inline const std::string& PrivateMessageLoad::content(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.content)
-  return _internal_content();
+  return _internal_content(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_content(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.content_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::mutable_content(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.content)
+  return _impl_.content_.Mutable(index);
+}
+inline void PrivateMessageLoad::set_content(int index, const std::string& value) {
+  _impl_.content_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.content)
 }
-inline std::string* PrivateMessageLoad::mutable_content() {
-  std::string* _s = _internal_mutable_content();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.content)
-  return _s;
+inline void PrivateMessageLoad::set_content(int index, std::string&& value) {
+  _impl_.content_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.content)
 }
-inline const std::string& PrivateMessageLoad::_internal_content() const {
-  return _impl_.content_.Get();
+inline void PrivateMessageLoad::set_content(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PrivateMessageLoad.content)
 }
-inline void PrivateMessageLoad::_internal_set_content(const std::string& value) {
-  
-  _impl_.content_.Set(value, GetArenaForAllocation());
+inline void PrivateMessageLoad::set_content(int index, const char* value, size_t size) {
+  _impl_.content_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PrivateMessageLoad.content)
 }
-inline std::string* PrivateMessageLoad::_internal_mutable_content() {
-  
-  return _impl_.content_.Mutable(GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::_internal_add_content() {
+  return _impl_.content_.Add();
 }
-inline std::string* PrivateMessageLoad::release_content() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.content)
-  return _impl_.content_.Release();
+inline void PrivateMessageLoad::add_content(const std::string& value) {
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.content)
 }
-inline void PrivateMessageLoad::set_allocated_content(std::string* content) {
-  if (content != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.content_.SetAllocated(content, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.content_.IsDefault()) {
-    _impl_.content_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.content)
+inline void PrivateMessageLoad::add_content(std::string&& value) {
+  _impl_.content_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.content)
+}
+inline void PrivateMessageLoad::add_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PrivateMessageLoad.content)
+}
+inline void PrivateMessageLoad::add_content(const char* value, size_t size) {
+  _impl_.content_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PrivateMessageLoad.content)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PrivateMessageLoad::content() const {
+  // @@protoc_insertion_point(field_list:net_service.PrivateMessageLoad.content)
+  return _impl_.content_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PrivateMessageLoad::mutable_content() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PrivateMessageLoad.content)
+  return &_impl_.content_;
 }
 
-// string reciever = 3;
+// repeated string reciever = 3;
+inline int PrivateMessageLoad::_internal_reciever_size() const {
+  return _impl_.reciever_.size();
+}
+inline int PrivateMessageLoad::reciever_size() const {
+  return _internal_reciever_size();
+}
 inline void PrivateMessageLoad::clear_reciever() {
-  _impl_.reciever_.ClearToEmpty();
+  _impl_.reciever_.Clear();
 }
-inline const std::string& PrivateMessageLoad::reciever() const {
+inline std::string* PrivateMessageLoad::add_reciever() {
+  std::string* _s = _internal_add_reciever();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PrivateMessageLoad.reciever)
+  return _s;
+}
+inline const std::string& PrivateMessageLoad::_internal_reciever(int index) const {
+  return _impl_.reciever_.Get(index);
+}
+inline const std::string& PrivateMessageLoad::reciever(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.reciever)
-  return _internal_reciever();
+  return _internal_reciever(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_reciever(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.reciever_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::mutable_reciever(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.reciever)
+  return _impl_.reciever_.Mutable(index);
+}
+inline void PrivateMessageLoad::set_reciever(int index, const std::string& value) {
+  _impl_.reciever_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.reciever)
 }
-inline std::string* PrivateMessageLoad::mutable_reciever() {
-  std::string* _s = _internal_mutable_reciever();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.reciever)
-  return _s;
+inline void PrivateMessageLoad::set_reciever(int index, std::string&& value) {
+  _impl_.reciever_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.reciever)
 }
-inline const std::string& PrivateMessageLoad::_internal_reciever() const {
-  return _impl_.reciever_.Get();
+inline void PrivateMessageLoad::set_reciever(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.reciever_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PrivateMessageLoad.reciever)
 }
-inline void PrivateMessageLoad::_internal_set_reciever(const std::string& value) {
-  
-  _impl_.reciever_.Set(value, GetArenaForAllocation());
+inline void PrivateMessageLoad::set_reciever(int index, const char* value, size_t size) {
+  _impl_.reciever_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PrivateMessageLoad.reciever)
 }
-inline std::string* PrivateMessageLoad::_internal_mutable_reciever() {
-  
-  return _impl_.reciever_.Mutable(GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::_internal_add_reciever() {
+  return _impl_.reciever_.Add();
 }
-inline std::string* PrivateMessageLoad::release_reciever() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.reciever)
-  return _impl_.reciever_.Release();
+inline void PrivateMessageLoad::add_reciever(const std::string& value) {
+  _impl_.reciever_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.reciever)
 }
-inline void PrivateMessageLoad::set_allocated_reciever(std::string* reciever) {
-  if (reciever != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.reciever_.SetAllocated(reciever, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.reciever_.IsDefault()) {
-    _impl_.reciever_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.reciever)
+inline void PrivateMessageLoad::add_reciever(std::string&& value) {
+  _impl_.reciever_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.reciever)
 }
-
-// int64 position = 4;
-inline void PrivateMessageLoad::clear_position() {
-  _impl_.position_ = int64_t{0};
+inline void PrivateMessageLoad::add_reciever(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.reciever_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PrivateMessageLoad.reciever)
 }
-inline int64_t PrivateMessageLoad::_internal_position() const {
-  return _impl_.position_;
+inline void PrivateMessageLoad::add_reciever(const char* value, size_t size) {
+  _impl_.reciever_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PrivateMessageLoad.reciever)
 }
-inline int64_t PrivateMessageLoad::position() const {
-  // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.position)
-  return _internal_position();
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PrivateMessageLoad::reciever() const {
+  // @@protoc_insertion_point(field_list:net_service.PrivateMessageLoad.reciever)
+  return _impl_.reciever_;
 }
-inline void PrivateMessageLoad::_internal_set_position(int64_t value) {
-  
-  _impl_.position_ = value;
-}
-inline void PrivateMessageLoad::set_position(int64_t value) {
-  _internal_set_position(value);
-  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.position)
-}
-
-// string token = 5;
-inline void PrivateMessageLoad::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& PrivateMessageLoad::token() const {
-  // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.token)
-  return _internal_token();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.token)
-}
-inline std::string* PrivateMessageLoad::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.token)
-  return _s;
-}
-inline const std::string& PrivateMessageLoad::_internal_token() const {
-  return _impl_.token_.Get();
-}
-inline void PrivateMessageLoad::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
-}
-inline std::string* PrivateMessageLoad::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
-}
-inline std::string* PrivateMessageLoad::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.token)
-  return _impl_.token_.Release();
-}
-inline void PrivateMessageLoad::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.token)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PrivateMessageLoad::mutable_reciever() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PrivateMessageLoad.reciever)
+  return &_impl_.reciever_;
 }
 
 #ifdef __GNUC__
