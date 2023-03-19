@@ -4,7 +4,7 @@ project("ChatCLI-server")
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(SRCFILES ./src/main.cpp ./src/client.cpp ./src/server.cpp)
+set(SRCFILES ./src/main.cpp ./src/client.cpp ./src/server.cpp ./proto/net_service.pb.cc ./proto/net_service.grpc.pb.cc)
 
 add_executable(ChatCLI-server ${SRCFILES})
 

@@ -42,9 +42,9 @@ public:
     grpc::Status signIn(::grpc::ServerContext* context, const ::net_service::CredentialsSignIn* request, ::net_service::Token* response);
     grpc::Status signOff(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response);
     grpc::Status savePublicMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response);
-    grpc::Status getPublicMessagess(::grpc::ServerContext* context, const ::net_service::MsgPos* request, ::net_service::PublicMessageLoad* response);
-    grpc::Status savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response);
-    grpc::Status getPrivateMessages(::grpc::ServerContext* context, const ::net_service::MsgPos* request, ::net_service::PrivateMessageLoad* response);
+    grpc::Status getPublicMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PublicMessageLoad* response);
+    grpc::Status savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PrivateMessageSave* request, ::net_service::Token* response);
+    grpc::Status getPrivateMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PrivateMessageLoad* response);
 };
 
 inline void runServer()

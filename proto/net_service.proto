@@ -7,11 +7,11 @@ service net_service {
 	rpc signIn (CredentialsSignIn) returns (Token) {}
 	rpc signOff (Token) returns (Token) {}
 	rpc savePublicMessage (PublicMessageSave) returns (Token) {};
-	rpc getPublicMessagess (MsgPos) returns (PublicMessageLoad) {};
+	rpc getPublicMessages (Token) returns ( stream PublicMessageLoad) {};
 	rpc savePrivateMessage (PrivateMessageSave) returns (Token) {};
-	rpc getPrivateMessages (MsgPos) returns (PrivateMessageLoad) {};
+	rpc getPrivateMessages (Token) returns (stream PrivateMessageLoad) {};
 }
-//todo optimization
+
 message Token {
 	string token = 1;
 	bool result = 2;
@@ -37,19 +37,15 @@ message PublicMessageSave {
 message PublicMessageLoad {
 	string sender = 1;
 	string content = 2;
-	int64 position = 3;
 	string token = 4;
 }
 message PrivateMessageSave {
 	string sender = 1;
 	string content = 2;
 	string reciever = 3;
-	string token = 4;
 }
 message PrivateMessageLoad {
 	string sender = 1;
 	string content = 2;
 	string reciever = 3;
-	int64 position = 4;
-	string token = 5;
 }
