@@ -259,7 +259,7 @@ const char descriptor_table_protodef_net_5fservice_2eproto[] PROTOBUF_SECTION_VA
   "\020\n\010reciever\030\003 \001(\t\022\r\n\005token\030\004 \001(\t\"h\n\022Priv"
   "ateMessageLoad\022\016\n\006sender\030\001 \001(\t\022\017\n\007conten"
   "t\030\002 \001(\t\022\020\n\010reciever\030\003 \001(\t\022\020\n\010position\030\004 "
-  "\001(\003\022\r\n\005token\030\005 \001(\t2\364\003\n\013net_service\022>\n\006si"
+  "\001(\003\022\r\n\005token\030\005 \001(\t2\365\003\n\013net_service\022>\n\006si"
   "gnUp\022\036.net_service.CredentialsSignUp\032\022.n"
   "et_service.Token\"\000\022>\n\006signIn\022\036.net_servi"
   "ce.CredentialsSignIn\032\022.net_service.Token"
@@ -268,15 +268,15 @@ const char descriptor_table_protodef_net_5fservice_2eproto[] PROTOBUF_SECTION_VA
   "et_service.PublicMessageSave\032\022.net_servi"
   "ce.Token\"\000\022K\n\022getPublicMessagess\022\023.net_s"
   "ervice.MsgPos\032\036.net_service.PublicMessag"
-  "eLoad\"\000\022J\n\022savePrivateMessage\022\036.net_serv"
-  "ice.PublicMessageSave\032\022.net_service.Toke"
-  "n\"\000\022L\n\022getPrivateMessages\022\023.net_service."
-  "MsgPos\032\037.net_service.PrivateMessageLoad\""
-  "\000b\006proto3"
+  "eLoad\"\000\022K\n\022savePrivateMessage\022\037.net_serv"
+  "ice.PrivateMessageSave\032\022.net_service.Tok"
+  "en\"\000\022L\n\022getPrivateMessages\022\023.net_service"
+  ".MsgPos\032\037.net_service.PrivateMessageLoad"
+  "\"\000b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_net_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_net_5fservice_2eproto = {
-    false, false, 1089, descriptor_table_protodef_net_5fservice_2eproto,
+    false, false, 1090, descriptor_table_protodef_net_5fservice_2eproto,
     "net_service.proto",
     &descriptor_table_net_5fservice_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_net_5fservice_2eproto::offsets,
