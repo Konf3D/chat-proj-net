@@ -38,13 +38,16 @@ private:
     bool isTokenValid(const TokenLoginPair& token) const;
     std::string generateToken();
 public:
-    grpc::Status signUp(::grpc::ServerContext* context, const ::net_service::CredentialsSignUp* request, ::net_service::Token* response);
-    grpc::Status signIn(::grpc::ServerContext* context, const ::net_service::CredentialsSignIn* request, ::net_service::Token* response);
-    grpc::Status signOff(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response);
-    grpc::Status savePublicMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response);
-    grpc::Status getPublicMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PublicMessageLoad* response);
-    grpc::Status savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PrivateMessageSave* request, ::net_service::Token* response);
-    grpc::Status getPrivateMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PrivateMessageLoad* response);
+    ChatServer();
+    ~ChatServer() = default;
+    grpc::Status signUp(::grpc::ServerContext* context, const ::net_service::CredentialsSignUp* request, ::net_service::Token* response) override;
+    grpc::Status signIn(::grpc::ServerContext* context, const ::net_service::CredentialsSignIn* request, ::net_service::Token* response) override;
+    grpc::Status signOff(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response) override;
+    grpc::Status savePublicMessage(::grpc::ServerContext* context, const ::net_service::PublicMessageSave* request, ::net_service::Token* response) override;
+    grpc::Status getPublicMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PublicMessageLoad* response) override;
+    grpc::Status savePrivateMessage(::grpc::ServerContext* context, const ::net_service::PrivateMessageSave* request, ::net_service::Token* response) override;
+    grpc::Status getPrivateMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PrivateMessageLoad* response) override;
+    grpc::Status getUsername(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response) override;
 };
 
 inline void runServer()
