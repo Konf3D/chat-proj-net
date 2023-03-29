@@ -69,9 +69,6 @@ extern PublicMessageSaveDefaultTypeInternal _PublicMessageSave_default_instance_
 class Token;
 struct TokenDefaultTypeInternal;
 extern TokenDefaultTypeInternal _Token_default_instance_;
-class Uid;
-struct UidDefaultTypeInternal;
-extern UidDefaultTypeInternal _Uid_default_instance_;
 }  // namespace net_service
 PROTOBUF_NAMESPACE_OPEN
 template<> ::net_service::CredentialsSignIn* Arena::CreateMaybeMessage<::net_service::CredentialsSignIn>(Arena*);
@@ -82,11 +79,528 @@ template<> ::net_service::PrivateMessageSave* Arena::CreateMaybeMessage<::net_se
 template<> ::net_service::PublicMessageLoad* Arena::CreateMaybeMessage<::net_service::PublicMessageLoad>(Arena*);
 template<> ::net_service::PublicMessageSave* Arena::CreateMaybeMessage<::net_service::PublicMessageSave>(Arena*);
 template<> ::net_service::Token* Arena::CreateMaybeMessage<::net_service::Token>(Arena*);
-template<> ::net_service::Uid* Arena::CreateMaybeMessage<::net_service::Uid>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace net_service {
 
 // ===================================================================
+
+class Token final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.Token) */ {
+ public:
+  inline Token() : Token(nullptr) {}
+  ~Token() override;
+  explicit PROTOBUF_CONSTEXPR Token(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Token(const Token& from);
+  Token(Token&& from) noexcept
+    : Token() {
+    *this = ::std::move(from);
+  }
+
+  inline Token& operator=(const Token& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Token& operator=(Token&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Token& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Token* internal_default_instance() {
+    return reinterpret_cast<const Token*>(
+               &_Token_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(Token& a, Token& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Token* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Token* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Token* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Token>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Token& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Token& from) {
+    Token::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Token* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "net_service.Token";
+  }
+  protected:
+  explicit Token(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+    kResultFieldNumber = 2,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // bool result = 2;
+  void clear_result();
+  bool result() const;
+  void set_result(bool value);
+  private:
+  bool _internal_result() const;
+  void _internal_set_result(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:net_service.Token)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    bool result_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_net_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CredentialsSignIn final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.CredentialsSignIn) */ {
+ public:
+  inline CredentialsSignIn() : CredentialsSignIn(nullptr) {}
+  ~CredentialsSignIn() override;
+  explicit PROTOBUF_CONSTEXPR CredentialsSignIn(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CredentialsSignIn(const CredentialsSignIn& from);
+  CredentialsSignIn(CredentialsSignIn&& from) noexcept
+    : CredentialsSignIn() {
+    *this = ::std::move(from);
+  }
+
+  inline CredentialsSignIn& operator=(const CredentialsSignIn& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CredentialsSignIn& operator=(CredentialsSignIn&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CredentialsSignIn& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CredentialsSignIn* internal_default_instance() {
+    return reinterpret_cast<const CredentialsSignIn*>(
+               &_CredentialsSignIn_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(CredentialsSignIn& a, CredentialsSignIn& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CredentialsSignIn* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CredentialsSignIn* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CredentialsSignIn* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CredentialsSignIn>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CredentialsSignIn& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CredentialsSignIn& from) {
+    CredentialsSignIn::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CredentialsSignIn* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "net_service.CredentialsSignIn";
+  }
+  protected:
+  explicit CredentialsSignIn(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLoginFieldNumber = 1,
+    kHashFieldNumber = 2,
+  };
+  // string login = 1;
+  void clear_login();
+  const std::string& login() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_login(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_login();
+  PROTOBUF_NODISCARD std::string* release_login();
+  void set_allocated_login(std::string* login);
+  private:
+  const std::string& _internal_login() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_login(const std::string& value);
+  std::string* _internal_mutable_login();
+  public:
+
+  // string hash = 2;
+  void clear_hash();
+  const std::string& hash() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_hash(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_hash();
+  PROTOBUF_NODISCARD std::string* release_hash();
+  void set_allocated_hash(std::string* hash);
+  private:
+  const std::string& _internal_hash() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hash(const std::string& value);
+  std::string* _internal_mutable_hash();
+  public:
+
+  // @@protoc_insertion_point(class_scope:net_service.CredentialsSignIn)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_net_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CredentialsSignUp final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.CredentialsSignUp) */ {
+ public:
+  inline CredentialsSignUp() : CredentialsSignUp(nullptr) {}
+  ~CredentialsSignUp() override;
+  explicit PROTOBUF_CONSTEXPR CredentialsSignUp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CredentialsSignUp(const CredentialsSignUp& from);
+  CredentialsSignUp(CredentialsSignUp&& from) noexcept
+    : CredentialsSignUp() {
+    *this = ::std::move(from);
+  }
+
+  inline CredentialsSignUp& operator=(const CredentialsSignUp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CredentialsSignUp& operator=(CredentialsSignUp&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CredentialsSignUp& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CredentialsSignUp* internal_default_instance() {
+    return reinterpret_cast<const CredentialsSignUp*>(
+               &_CredentialsSignUp_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(CredentialsSignUp& a, CredentialsSignUp& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CredentialsSignUp* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CredentialsSignUp* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CredentialsSignUp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CredentialsSignUp>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CredentialsSignUp& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CredentialsSignUp& from) {
+    CredentialsSignUp::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CredentialsSignUp* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "net_service.CredentialsSignUp";
+  }
+  protected:
+  explicit CredentialsSignUp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLoginFieldNumber = 1,
+    kUsernameFieldNumber = 2,
+    kHashFieldNumber = 3,
+  };
+  // string login = 1;
+  void clear_login();
+  const std::string& login() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_login(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_login();
+  PROTOBUF_NODISCARD std::string* release_login();
+  void set_allocated_login(std::string* login);
+  private:
+  const std::string& _internal_login() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_login(const std::string& value);
+  std::string* _internal_mutable_login();
+  public:
+
+  // string username = 2;
+  void clear_username();
+  const std::string& username() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_username(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_username();
+  PROTOBUF_NODISCARD std::string* release_username();
+  void set_allocated_username(std::string* username);
+  private:
+  const std::string& _internal_username() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_username(const std::string& value);
+  std::string* _internal_mutable_username();
+  public:
+
+  // string hash = 3;
+  void clear_hash();
+  const std::string& hash() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_hash(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_hash();
+  PROTOBUF_NODISCARD std::string* release_hash();
+  void set_allocated_hash(std::string* hash);
+  private:
+  const std::string& _internal_hash() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hash(const std::string& value);
+  std::string* _internal_mutable_hash();
+  public:
+
+  // @@protoc_insertion_point(class_scope:net_service.CredentialsSignUp)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_net_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
 
 class MsgPos final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.MsgPos) */ {
@@ -136,7 +650,7 @@ class MsgPos final :
                &_MsgPos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    3;
 
   friend void swap(MsgPos& a, MsgPos& b) {
     a.Swap(&b);
@@ -300,7 +814,7 @@ class PublicMessageSave final :
                &_PublicMessageSave_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    4;
 
   friend void swap(PublicMessageSave& a, PublicMessageSave& b) {
     a.Swap(&b);
@@ -485,7 +999,7 @@ class PublicMessageLoad final :
                &_PublicMessageLoad_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    5;
 
   friend void swap(PublicMessageLoad& a, PublicMessageLoad& b) {
     a.Swap(&b);
@@ -560,38 +1074,57 @@ class PublicMessageLoad final :
   enum : int {
     kSenderFieldNumber = 1,
     kContentFieldNumber = 2,
-    kTokenFieldNumber = 4,
-    kPositionFieldNumber = 3,
+    kTokenFieldNumber = 3,
   };
-  // string sender = 1;
+  // repeated string sender = 1;
+  int sender_size() const;
+  private:
+  int _internal_sender_size() const;
+  public:
   void clear_sender();
-  const std::string& sender() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_sender(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_sender();
-  PROTOBUF_NODISCARD std::string* release_sender();
-  void set_allocated_sender(std::string* sender);
+  const std::string& sender(int index) const;
+  std::string* mutable_sender(int index);
+  void set_sender(int index, const std::string& value);
+  void set_sender(int index, std::string&& value);
+  void set_sender(int index, const char* value);
+  void set_sender(int index, const char* value, size_t size);
+  std::string* add_sender();
+  void add_sender(const std::string& value);
+  void add_sender(std::string&& value);
+  void add_sender(const char* value);
+  void add_sender(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& sender() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_sender();
   private:
-  const std::string& _internal_sender() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sender(const std::string& value);
-  std::string* _internal_mutable_sender();
+  const std::string& _internal_sender(int index) const;
+  std::string* _internal_add_sender();
   public:
 
-  // string content = 2;
+  // repeated string content = 2;
+  int content_size() const;
+  private:
+  int _internal_content_size() const;
+  public:
   void clear_content();
-  const std::string& content() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_content(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_content();
-  PROTOBUF_NODISCARD std::string* release_content();
-  void set_allocated_content(std::string* content);
+  const std::string& content(int index) const;
+  std::string* mutable_content(int index);
+  void set_content(int index, const std::string& value);
+  void set_content(int index, std::string&& value);
+  void set_content(int index, const char* value);
+  void set_content(int index, const char* value, size_t size);
+  std::string* add_content();
+  void add_content(const std::string& value);
+  void add_content(std::string&& value);
+  void add_content(const char* value);
+  void add_content(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& content() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_content();
   private:
-  const std::string& _internal_content() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(const std::string& value);
-  std::string* _internal_mutable_content();
+  const std::string& _internal_content(int index) const;
+  std::string* _internal_add_content();
   public:
 
-  // string token = 4;
+  // string token = 3;
   void clear_token();
   const std::string& token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -605,15 +1138,6 @@ class PublicMessageLoad final :
   std::string* _internal_mutable_token();
   public:
 
-  // int64 position = 3;
-  void clear_position();
-  int64_t position() const;
-  void set_position(int64_t value);
-  private:
-  int64_t _internal_position() const;
-  void _internal_set_position(int64_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:net_service.PublicMessageLoad)
  private:
   class _Internal;
@@ -622,10 +1146,9 @@ class PublicMessageLoad final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sender_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> sender_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> content_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    int64_t position_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -681,7 +1204,7 @@ class PrivateMessageSave final :
                &_PrivateMessageSave_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    6;
 
   friend void swap(PrivateMessageSave& a, PrivateMessageSave& b) {
     a.Swap(&b);
@@ -882,7 +1405,7 @@ class PrivateMessageLoad final :
                &_PrivateMessageLoad_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    7;
 
   friend void swap(PrivateMessageLoad& a, PrivateMessageLoad& b) {
     a.Swap(&b);
@@ -958,445 +1481,78 @@ class PrivateMessageLoad final :
     kSenderFieldNumber = 1,
     kContentFieldNumber = 2,
     kRecieverFieldNumber = 3,
-    kTokenFieldNumber = 5,
-    kPositionFieldNumber = 4,
-  };
-  // string sender = 1;
-  void clear_sender();
-  const std::string& sender() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_sender(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_sender();
-  PROTOBUF_NODISCARD std::string* release_sender();
-  void set_allocated_sender(std::string* sender);
-  private:
-  const std::string& _internal_sender() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sender(const std::string& value);
-  std::string* _internal_mutable_sender();
-  public:
-
-  // string content = 2;
-  void clear_content();
-  const std::string& content() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_content(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_content();
-  PROTOBUF_NODISCARD std::string* release_content();
-  void set_allocated_content(std::string* content);
-  private:
-  const std::string& _internal_content() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(const std::string& value);
-  std::string* _internal_mutable_content();
-  public:
-
-  // string reciever = 3;
-  void clear_reciever();
-  const std::string& reciever() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_reciever(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_reciever();
-  PROTOBUF_NODISCARD std::string* release_reciever();
-  void set_allocated_reciever(std::string* reciever);
-  private:
-  const std::string& _internal_reciever() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reciever(const std::string& value);
-  std::string* _internal_mutable_reciever();
-  public:
-
-  // string token = 5;
-  void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
-  private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
-  // int64 position = 4;
-  void clear_position();
-  int64_t position() const;
-  void set_position(int64_t value);
-  private:
-  int64_t _internal_position() const;
-  void _internal_set_position(int64_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:net_service.PrivateMessageLoad)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sender_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reciever_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    int64_t position_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_net_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CredentialsSignIn final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.CredentialsSignIn) */ {
- public:
-  inline CredentialsSignIn() : CredentialsSignIn(nullptr) {}
-  ~CredentialsSignIn() override;
-  explicit PROTOBUF_CONSTEXPR CredentialsSignIn(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CredentialsSignIn(const CredentialsSignIn& from);
-  CredentialsSignIn(CredentialsSignIn&& from) noexcept
-    : CredentialsSignIn() {
-    *this = ::std::move(from);
-  }
-
-  inline CredentialsSignIn& operator=(const CredentialsSignIn& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CredentialsSignIn& operator=(CredentialsSignIn&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CredentialsSignIn& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CredentialsSignIn* internal_default_instance() {
-    return reinterpret_cast<const CredentialsSignIn*>(
-               &_CredentialsSignIn_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  friend void swap(CredentialsSignIn& a, CredentialsSignIn& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CredentialsSignIn* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CredentialsSignIn* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CredentialsSignIn* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CredentialsSignIn>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CredentialsSignIn& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CredentialsSignIn& from) {
-    CredentialsSignIn::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CredentialsSignIn* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "net_service.CredentialsSignIn";
-  }
-  protected:
-  explicit CredentialsSignIn(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kLoginFieldNumber = 1,
-    kHashFieldNumber = 2,
-    kTokenFieldNumber = 3,
-  };
-  // string login = 1;
-  void clear_login();
-  const std::string& login() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_login(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_login();
-  PROTOBUF_NODISCARD std::string* release_login();
-  void set_allocated_login(std::string* login);
-  private:
-  const std::string& _internal_login() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_login(const std::string& value);
-  std::string* _internal_mutable_login();
-  public:
-
-  // string hash = 2;
-  void clear_hash();
-  const std::string& hash() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_hash(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_hash();
-  PROTOBUF_NODISCARD std::string* release_hash();
-  void set_allocated_hash(std::string* hash);
-  private:
-  const std::string& _internal_hash() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hash(const std::string& value);
-  std::string* _internal_mutable_hash();
-  public:
-
-  // string token = 3;
-  void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
-  private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
-  // @@protoc_insertion_point(class_scope:net_service.CredentialsSignIn)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_net_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CredentialsSignUp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.CredentialsSignUp) */ {
- public:
-  inline CredentialsSignUp() : CredentialsSignUp(nullptr) {}
-  ~CredentialsSignUp() override;
-  explicit PROTOBUF_CONSTEXPR CredentialsSignUp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CredentialsSignUp(const CredentialsSignUp& from);
-  CredentialsSignUp(CredentialsSignUp&& from) noexcept
-    : CredentialsSignUp() {
-    *this = ::std::move(from);
-  }
-
-  inline CredentialsSignUp& operator=(const CredentialsSignUp& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CredentialsSignUp& operator=(CredentialsSignUp&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CredentialsSignUp& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CredentialsSignUp* internal_default_instance() {
-    return reinterpret_cast<const CredentialsSignUp*>(
-               &_CredentialsSignUp_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(CredentialsSignUp& a, CredentialsSignUp& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CredentialsSignUp* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CredentialsSignUp* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CredentialsSignUp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CredentialsSignUp>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CredentialsSignUp& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CredentialsSignUp& from) {
-    CredentialsSignUp::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CredentialsSignUp* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "net_service.CredentialsSignUp";
-  }
-  protected:
-  explicit CredentialsSignUp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kLoginFieldNumber = 1,
-    kUsernameFieldNumber = 2,
-    kHashFieldNumber = 3,
     kTokenFieldNumber = 4,
   };
-  // string login = 1;
-  void clear_login();
-  const std::string& login() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_login(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_login();
-  PROTOBUF_NODISCARD std::string* release_login();
-  void set_allocated_login(std::string* login);
+  // repeated string sender = 1;
+  int sender_size() const;
   private:
-  const std::string& _internal_login() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_login(const std::string& value);
-  std::string* _internal_mutable_login();
+  int _internal_sender_size() const;
+  public:
+  void clear_sender();
+  const std::string& sender(int index) const;
+  std::string* mutable_sender(int index);
+  void set_sender(int index, const std::string& value);
+  void set_sender(int index, std::string&& value);
+  void set_sender(int index, const char* value);
+  void set_sender(int index, const char* value, size_t size);
+  std::string* add_sender();
+  void add_sender(const std::string& value);
+  void add_sender(std::string&& value);
+  void add_sender(const char* value);
+  void add_sender(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& sender() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_sender();
+  private:
+  const std::string& _internal_sender(int index) const;
+  std::string* _internal_add_sender();
   public:
 
-  // string username = 2;
-  void clear_username();
-  const std::string& username() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_username(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_username();
-  PROTOBUF_NODISCARD std::string* release_username();
-  void set_allocated_username(std::string* username);
+  // repeated string content = 2;
+  int content_size() const;
   private:
-  const std::string& _internal_username() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_username(const std::string& value);
-  std::string* _internal_mutable_username();
+  int _internal_content_size() const;
+  public:
+  void clear_content();
+  const std::string& content(int index) const;
+  std::string* mutable_content(int index);
+  void set_content(int index, const std::string& value);
+  void set_content(int index, std::string&& value);
+  void set_content(int index, const char* value);
+  void set_content(int index, const char* value, size_t size);
+  std::string* add_content();
+  void add_content(const std::string& value);
+  void add_content(std::string&& value);
+  void add_content(const char* value);
+  void add_content(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& content() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_content();
+  private:
+  const std::string& _internal_content(int index) const;
+  std::string* _internal_add_content();
   public:
 
-  // string hash = 3;
-  void clear_hash();
-  const std::string& hash() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_hash(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_hash();
-  PROTOBUF_NODISCARD std::string* release_hash();
-  void set_allocated_hash(std::string* hash);
+  // repeated string reciever = 3;
+  int reciever_size() const;
   private:
-  const std::string& _internal_hash() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hash(const std::string& value);
-  std::string* _internal_mutable_hash();
+  int _internal_reciever_size() const;
+  public:
+  void clear_reciever();
+  const std::string& reciever(int index) const;
+  std::string* mutable_reciever(int index);
+  void set_reciever(int index, const std::string& value);
+  void set_reciever(int index, std::string&& value);
+  void set_reciever(int index, const char* value);
+  void set_reciever(int index, const char* value, size_t size);
+  std::string* add_reciever();
+  void add_reciever(const std::string& value);
+  void add_reciever(std::string&& value);
+  void add_reciever(const char* value);
+  void add_reciever(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& reciever() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_reciever();
+  private:
+  const std::string& _internal_reciever(int index) const;
+  std::string* _internal_add_reciever();
   public:
 
   // string token = 4;
@@ -1413,7 +1569,7 @@ class CredentialsSignUp final :
   std::string* _internal_mutable_token();
   public:
 
-  // @@protoc_insertion_point(class_scope:net_service.CredentialsSignUp)
+  // @@protoc_insertion_point(class_scope:net_service.PrivateMessageLoad)
  private:
   class _Internal;
 
@@ -1421,354 +1577,10 @@ class CredentialsSignUp final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> sender_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> content_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> reciever_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_net_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class Uid final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.Uid) */ {
- public:
-  inline Uid() : Uid(nullptr) {}
-  ~Uid() override;
-  explicit PROTOBUF_CONSTEXPR Uid(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Uid(const Uid& from);
-  Uid(Uid&& from) noexcept
-    : Uid() {
-    *this = ::std::move(from);
-  }
-
-  inline Uid& operator=(const Uid& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Uid& operator=(Uid&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Uid& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Uid* internal_default_instance() {
-    return reinterpret_cast<const Uid*>(
-               &_Uid_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  friend void swap(Uid& a, Uid& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Uid* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Uid* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Uid* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Uid>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Uid& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const Uid& from) {
-    Uid::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Uid* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "net_service.Uid";
-  }
-  protected:
-  explicit Uid(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIdFieldNumber = 1,
-    kTokenFieldNumber = 2,
-    kResultFieldNumber = 3,
-  };
-  // string id = 1;
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // string token = 2;
-  void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
-  private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
-  // bool result = 3;
-  void clear_result();
-  bool result() const;
-  void set_result(bool value);
-  private:
-  bool _internal_result() const;
-  void _internal_set_result(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:net_service.Uid)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    bool result_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_net_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class Token final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:net_service.Token) */ {
- public:
-  inline Token() : Token(nullptr) {}
-  ~Token() override;
-  explicit PROTOBUF_CONSTEXPR Token(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Token(const Token& from);
-  Token(Token&& from) noexcept
-    : Token() {
-    *this = ::std::move(from);
-  }
-
-  inline Token& operator=(const Token& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Token& operator=(Token&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Token& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Token* internal_default_instance() {
-    return reinterpret_cast<const Token*>(
-               &_Token_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  friend void swap(Token& a, Token& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Token* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Token* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Token* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Token>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Token& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const Token& from) {
-    Token::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Token* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "net_service.Token";
-  }
-  protected:
-  explicit Token(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTokenFieldNumber = 1,
-    kResultFieldNumber = 2,
-  };
-  // string token = 1;
-  void clear_token();
-  const std::string& token() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_token(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_token();
-  PROTOBUF_NODISCARD std::string* release_token();
-  void set_allocated_token(std::string* token);
-  private:
-  const std::string& _internal_token() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
-  std::string* _internal_mutable_token();
-  public:
-
-  // bool result = 2;
-  void clear_result();
-  bool result() const;
-  void set_result(bool value);
-  private:
-  bool _internal_result() const;
-  void _internal_set_result(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:net_service.Token)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
-    bool result_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1783,6 +1595,338 @@ class Token final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Token
+
+// string token = 1;
+inline void Token::clear_token() {
+  _impl_.token_.ClearToEmpty();
+}
+inline const std::string& Token::token() const {
+  // @@protoc_insertion_point(field_get:net_service.Token.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Token::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:net_service.Token.token)
+}
+inline std::string* Token::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:net_service.Token.token)
+  return _s;
+}
+inline const std::string& Token::_internal_token() const {
+  return _impl_.token_.Get();
+}
+inline void Token::_internal_set_token(const std::string& value) {
+  
+  _impl_.token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Token::_internal_mutable_token() {
+  
+  return _impl_.token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Token::release_token() {
+  // @@protoc_insertion_point(field_release:net_service.Token.token)
+  return _impl_.token_.Release();
+}
+inline void Token::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.token_.IsDefault()) {
+    _impl_.token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:net_service.Token.token)
+}
+
+// bool result = 2;
+inline void Token::clear_result() {
+  _impl_.result_ = false;
+}
+inline bool Token::_internal_result() const {
+  return _impl_.result_;
+}
+inline bool Token::result() const {
+  // @@protoc_insertion_point(field_get:net_service.Token.result)
+  return _internal_result();
+}
+inline void Token::_internal_set_result(bool value) {
+  
+  _impl_.result_ = value;
+}
+inline void Token::set_result(bool value) {
+  _internal_set_result(value);
+  // @@protoc_insertion_point(field_set:net_service.Token.result)
+}
+
+// -------------------------------------------------------------------
+
+// CredentialsSignIn
+
+// string login = 1;
+inline void CredentialsSignIn::clear_login() {
+  _impl_.login_.ClearToEmpty();
+}
+inline const std::string& CredentialsSignIn::login() const {
+  // @@protoc_insertion_point(field_get:net_service.CredentialsSignIn.login)
+  return _internal_login();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CredentialsSignIn::set_login(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.login_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:net_service.CredentialsSignIn.login)
+}
+inline std::string* CredentialsSignIn::mutable_login() {
+  std::string* _s = _internal_mutable_login();
+  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignIn.login)
+  return _s;
+}
+inline const std::string& CredentialsSignIn::_internal_login() const {
+  return _impl_.login_.Get();
+}
+inline void CredentialsSignIn::_internal_set_login(const std::string& value) {
+  
+  _impl_.login_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CredentialsSignIn::_internal_mutable_login() {
+  
+  return _impl_.login_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CredentialsSignIn::release_login() {
+  // @@protoc_insertion_point(field_release:net_service.CredentialsSignIn.login)
+  return _impl_.login_.Release();
+}
+inline void CredentialsSignIn::set_allocated_login(std::string* login) {
+  if (login != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.login_.SetAllocated(login, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.login_.IsDefault()) {
+    _impl_.login_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignIn.login)
+}
+
+// string hash = 2;
+inline void CredentialsSignIn::clear_hash() {
+  _impl_.hash_.ClearToEmpty();
+}
+inline const std::string& CredentialsSignIn::hash() const {
+  // @@protoc_insertion_point(field_get:net_service.CredentialsSignIn.hash)
+  return _internal_hash();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CredentialsSignIn::set_hash(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.hash_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:net_service.CredentialsSignIn.hash)
+}
+inline std::string* CredentialsSignIn::mutable_hash() {
+  std::string* _s = _internal_mutable_hash();
+  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignIn.hash)
+  return _s;
+}
+inline const std::string& CredentialsSignIn::_internal_hash() const {
+  return _impl_.hash_.Get();
+}
+inline void CredentialsSignIn::_internal_set_hash(const std::string& value) {
+  
+  _impl_.hash_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CredentialsSignIn::_internal_mutable_hash() {
+  
+  return _impl_.hash_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CredentialsSignIn::release_hash() {
+  // @@protoc_insertion_point(field_release:net_service.CredentialsSignIn.hash)
+  return _impl_.hash_.Release();
+}
+inline void CredentialsSignIn::set_allocated_hash(std::string* hash) {
+  if (hash != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.hash_.SetAllocated(hash, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.hash_.IsDefault()) {
+    _impl_.hash_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignIn.hash)
+}
+
+// -------------------------------------------------------------------
+
+// CredentialsSignUp
+
+// string login = 1;
+inline void CredentialsSignUp::clear_login() {
+  _impl_.login_.ClearToEmpty();
+}
+inline const std::string& CredentialsSignUp::login() const {
+  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.login)
+  return _internal_login();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CredentialsSignUp::set_login(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.login_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.login)
+}
+inline std::string* CredentialsSignUp::mutable_login() {
+  std::string* _s = _internal_mutable_login();
+  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.login)
+  return _s;
+}
+inline const std::string& CredentialsSignUp::_internal_login() const {
+  return _impl_.login_.Get();
+}
+inline void CredentialsSignUp::_internal_set_login(const std::string& value) {
+  
+  _impl_.login_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CredentialsSignUp::_internal_mutable_login() {
+  
+  return _impl_.login_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CredentialsSignUp::release_login() {
+  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.login)
+  return _impl_.login_.Release();
+}
+inline void CredentialsSignUp::set_allocated_login(std::string* login) {
+  if (login != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.login_.SetAllocated(login, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.login_.IsDefault()) {
+    _impl_.login_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.login)
+}
+
+// string username = 2;
+inline void CredentialsSignUp::clear_username() {
+  _impl_.username_.ClearToEmpty();
+}
+inline const std::string& CredentialsSignUp::username() const {
+  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.username)
+  return _internal_username();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CredentialsSignUp::set_username(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.username_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.username)
+}
+inline std::string* CredentialsSignUp::mutable_username() {
+  std::string* _s = _internal_mutable_username();
+  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.username)
+  return _s;
+}
+inline const std::string& CredentialsSignUp::_internal_username() const {
+  return _impl_.username_.Get();
+}
+inline void CredentialsSignUp::_internal_set_username(const std::string& value) {
+  
+  _impl_.username_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CredentialsSignUp::_internal_mutable_username() {
+  
+  return _impl_.username_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CredentialsSignUp::release_username() {
+  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.username)
+  return _impl_.username_.Release();
+}
+inline void CredentialsSignUp::set_allocated_username(std::string* username) {
+  if (username != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.username_.SetAllocated(username, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.username_.IsDefault()) {
+    _impl_.username_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.username)
+}
+
+// string hash = 3;
+inline void CredentialsSignUp::clear_hash() {
+  _impl_.hash_.ClearToEmpty();
+}
+inline const std::string& CredentialsSignUp::hash() const {
+  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.hash)
+  return _internal_hash();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CredentialsSignUp::set_hash(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.hash_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.hash)
+}
+inline std::string* CredentialsSignUp::mutable_hash() {
+  std::string* _s = _internal_mutable_hash();
+  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.hash)
+  return _s;
+}
+inline const std::string& CredentialsSignUp::_internal_hash() const {
+  return _impl_.hash_.Get();
+}
+inline void CredentialsSignUp::_internal_set_hash(const std::string& value) {
+  
+  _impl_.hash_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CredentialsSignUp::_internal_mutable_hash() {
+  
+  return _impl_.hash_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CredentialsSignUp::release_hash() {
+  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.hash)
+  return _impl_.hash_.Release();
+}
+inline void CredentialsSignUp::set_allocated_hash(std::string* hash) {
+  if (hash != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.hash_.SetAllocated(hash, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.hash_.IsDefault()) {
+    _impl_.hash_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.hash)
+}
+
+// -------------------------------------------------------------------
+
 // MsgPos
 
 // string token = 1;
@@ -2013,127 +2157,157 @@ inline void PublicMessageSave::set_allocated_token(std::string* token) {
 
 // PublicMessageLoad
 
-// string sender = 1;
+// repeated string sender = 1;
+inline int PublicMessageLoad::_internal_sender_size() const {
+  return _impl_.sender_.size();
+}
+inline int PublicMessageLoad::sender_size() const {
+  return _internal_sender_size();
+}
 inline void PublicMessageLoad::clear_sender() {
-  _impl_.sender_.ClearToEmpty();
+  _impl_.sender_.Clear();
 }
-inline const std::string& PublicMessageLoad::sender() const {
+inline std::string* PublicMessageLoad::add_sender() {
+  std::string* _s = _internal_add_sender();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PublicMessageLoad.sender)
+  return _s;
+}
+inline const std::string& PublicMessageLoad::_internal_sender(int index) const {
+  return _impl_.sender_.Get(index);
+}
+inline const std::string& PublicMessageLoad::sender(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.sender)
-  return _internal_sender();
+  return _internal_sender(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PublicMessageLoad::set_sender(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.sender_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PublicMessageLoad::mutable_sender(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.sender)
+  return _impl_.sender_.Mutable(index);
+}
+inline void PublicMessageLoad::set_sender(int index, const std::string& value) {
+  _impl_.sender_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.sender)
 }
-inline std::string* PublicMessageLoad::mutable_sender() {
-  std::string* _s = _internal_mutable_sender();
-  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.sender)
-  return _s;
+inline void PublicMessageLoad::set_sender(int index, std::string&& value) {
+  _impl_.sender_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.sender)
 }
-inline const std::string& PublicMessageLoad::_internal_sender() const {
-  return _impl_.sender_.Get();
+inline void PublicMessageLoad::set_sender(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PublicMessageLoad.sender)
 }
-inline void PublicMessageLoad::_internal_set_sender(const std::string& value) {
-  
-  _impl_.sender_.Set(value, GetArenaForAllocation());
+inline void PublicMessageLoad::set_sender(int index, const char* value, size_t size) {
+  _impl_.sender_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PublicMessageLoad.sender)
 }
-inline std::string* PublicMessageLoad::_internal_mutable_sender() {
-  
-  return _impl_.sender_.Mutable(GetArenaForAllocation());
+inline std::string* PublicMessageLoad::_internal_add_sender() {
+  return _impl_.sender_.Add();
 }
-inline std::string* PublicMessageLoad::release_sender() {
-  // @@protoc_insertion_point(field_release:net_service.PublicMessageLoad.sender)
-  return _impl_.sender_.Release();
+inline void PublicMessageLoad::add_sender(const std::string& value) {
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.sender)
 }
-inline void PublicMessageLoad::set_allocated_sender(std::string* sender) {
-  if (sender != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.sender_.SetAllocated(sender, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.sender_.IsDefault()) {
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PublicMessageLoad.sender)
+inline void PublicMessageLoad::add_sender(std::string&& value) {
+  _impl_.sender_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.sender)
+}
+inline void PublicMessageLoad::add_sender(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PublicMessageLoad.sender)
+}
+inline void PublicMessageLoad::add_sender(const char* value, size_t size) {
+  _impl_.sender_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PublicMessageLoad.sender)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PublicMessageLoad::sender() const {
+  // @@protoc_insertion_point(field_list:net_service.PublicMessageLoad.sender)
+  return _impl_.sender_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PublicMessageLoad::mutable_sender() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PublicMessageLoad.sender)
+  return &_impl_.sender_;
 }
 
-// string content = 2;
+// repeated string content = 2;
+inline int PublicMessageLoad::_internal_content_size() const {
+  return _impl_.content_.size();
+}
+inline int PublicMessageLoad::content_size() const {
+  return _internal_content_size();
+}
 inline void PublicMessageLoad::clear_content() {
-  _impl_.content_.ClearToEmpty();
+  _impl_.content_.Clear();
 }
-inline const std::string& PublicMessageLoad::content() const {
+inline std::string* PublicMessageLoad::add_content() {
+  std::string* _s = _internal_add_content();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PublicMessageLoad.content)
+  return _s;
+}
+inline const std::string& PublicMessageLoad::_internal_content(int index) const {
+  return _impl_.content_.Get(index);
+}
+inline const std::string& PublicMessageLoad::content(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.content)
-  return _internal_content();
+  return _internal_content(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PublicMessageLoad::set_content(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.content_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PublicMessageLoad::mutable_content(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.content)
+  return _impl_.content_.Mutable(index);
+}
+inline void PublicMessageLoad::set_content(int index, const std::string& value) {
+  _impl_.content_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.content)
 }
-inline std::string* PublicMessageLoad::mutable_content() {
-  std::string* _s = _internal_mutable_content();
-  // @@protoc_insertion_point(field_mutable:net_service.PublicMessageLoad.content)
-  return _s;
+inline void PublicMessageLoad::set_content(int index, std::string&& value) {
+  _impl_.content_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.content)
 }
-inline const std::string& PublicMessageLoad::_internal_content() const {
-  return _impl_.content_.Get();
+inline void PublicMessageLoad::set_content(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PublicMessageLoad.content)
 }
-inline void PublicMessageLoad::_internal_set_content(const std::string& value) {
-  
-  _impl_.content_.Set(value, GetArenaForAllocation());
+inline void PublicMessageLoad::set_content(int index, const char* value, size_t size) {
+  _impl_.content_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PublicMessageLoad.content)
 }
-inline std::string* PublicMessageLoad::_internal_mutable_content() {
-  
-  return _impl_.content_.Mutable(GetArenaForAllocation());
+inline std::string* PublicMessageLoad::_internal_add_content() {
+  return _impl_.content_.Add();
 }
-inline std::string* PublicMessageLoad::release_content() {
-  // @@protoc_insertion_point(field_release:net_service.PublicMessageLoad.content)
-  return _impl_.content_.Release();
+inline void PublicMessageLoad::add_content(const std::string& value) {
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.content)
 }
-inline void PublicMessageLoad::set_allocated_content(std::string* content) {
-  if (content != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.content_.SetAllocated(content, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.content_.IsDefault()) {
-    _impl_.content_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PublicMessageLoad.content)
+inline void PublicMessageLoad::add_content(std::string&& value) {
+  _impl_.content_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PublicMessageLoad.content)
 }
-
-// int64 position = 3;
-inline void PublicMessageLoad::clear_position() {
-  _impl_.position_ = int64_t{0};
+inline void PublicMessageLoad::add_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PublicMessageLoad.content)
 }
-inline int64_t PublicMessageLoad::_internal_position() const {
-  return _impl_.position_;
+inline void PublicMessageLoad::add_content(const char* value, size_t size) {
+  _impl_.content_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PublicMessageLoad.content)
 }
-inline int64_t PublicMessageLoad::position() const {
-  // @@protoc_insertion_point(field_get:net_service.PublicMessageLoad.position)
-  return _internal_position();
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PublicMessageLoad::content() const {
+  // @@protoc_insertion_point(field_list:net_service.PublicMessageLoad.content)
+  return _impl_.content_;
 }
-inline void PublicMessageLoad::_internal_set_position(int64_t value) {
-  
-  _impl_.position_ = value;
-}
-inline void PublicMessageLoad::set_position(int64_t value) {
-  _internal_set_position(value);
-  // @@protoc_insertion_point(field_set:net_service.PublicMessageLoad.position)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PublicMessageLoad::mutable_content() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PublicMessageLoad.content)
+  return &_impl_.content_;
 }
 
-// string token = 4;
+// string token = 3;
 inline void PublicMessageLoad::clear_token() {
   _impl_.token_.ClearToEmpty();
 }
@@ -2391,177 +2565,232 @@ inline void PrivateMessageSave::set_allocated_token(std::string* token) {
 
 // PrivateMessageLoad
 
-// string sender = 1;
+// repeated string sender = 1;
+inline int PrivateMessageLoad::_internal_sender_size() const {
+  return _impl_.sender_.size();
+}
+inline int PrivateMessageLoad::sender_size() const {
+  return _internal_sender_size();
+}
 inline void PrivateMessageLoad::clear_sender() {
-  _impl_.sender_.ClearToEmpty();
+  _impl_.sender_.Clear();
 }
-inline const std::string& PrivateMessageLoad::sender() const {
+inline std::string* PrivateMessageLoad::add_sender() {
+  std::string* _s = _internal_add_sender();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PrivateMessageLoad.sender)
+  return _s;
+}
+inline const std::string& PrivateMessageLoad::_internal_sender(int index) const {
+  return _impl_.sender_.Get(index);
+}
+inline const std::string& PrivateMessageLoad::sender(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.sender)
-  return _internal_sender();
+  return _internal_sender(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_sender(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.sender_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::mutable_sender(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.sender)
+  return _impl_.sender_.Mutable(index);
+}
+inline void PrivateMessageLoad::set_sender(int index, const std::string& value) {
+  _impl_.sender_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.sender)
 }
-inline std::string* PrivateMessageLoad::mutable_sender() {
-  std::string* _s = _internal_mutable_sender();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.sender)
-  return _s;
+inline void PrivateMessageLoad::set_sender(int index, std::string&& value) {
+  _impl_.sender_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.sender)
 }
-inline const std::string& PrivateMessageLoad::_internal_sender() const {
-  return _impl_.sender_.Get();
+inline void PrivateMessageLoad::set_sender(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PrivateMessageLoad.sender)
 }
-inline void PrivateMessageLoad::_internal_set_sender(const std::string& value) {
-  
-  _impl_.sender_.Set(value, GetArenaForAllocation());
+inline void PrivateMessageLoad::set_sender(int index, const char* value, size_t size) {
+  _impl_.sender_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PrivateMessageLoad.sender)
 }
-inline std::string* PrivateMessageLoad::_internal_mutable_sender() {
-  
-  return _impl_.sender_.Mutable(GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::_internal_add_sender() {
+  return _impl_.sender_.Add();
 }
-inline std::string* PrivateMessageLoad::release_sender() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.sender)
-  return _impl_.sender_.Release();
+inline void PrivateMessageLoad::add_sender(const std::string& value) {
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.sender)
 }
-inline void PrivateMessageLoad::set_allocated_sender(std::string* sender) {
-  if (sender != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.sender_.SetAllocated(sender, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.sender_.IsDefault()) {
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.sender)
+inline void PrivateMessageLoad::add_sender(std::string&& value) {
+  _impl_.sender_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.sender)
+}
+inline void PrivateMessageLoad::add_sender(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.sender_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PrivateMessageLoad.sender)
+}
+inline void PrivateMessageLoad::add_sender(const char* value, size_t size) {
+  _impl_.sender_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PrivateMessageLoad.sender)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PrivateMessageLoad::sender() const {
+  // @@protoc_insertion_point(field_list:net_service.PrivateMessageLoad.sender)
+  return _impl_.sender_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PrivateMessageLoad::mutable_sender() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PrivateMessageLoad.sender)
+  return &_impl_.sender_;
 }
 
-// string content = 2;
+// repeated string content = 2;
+inline int PrivateMessageLoad::_internal_content_size() const {
+  return _impl_.content_.size();
+}
+inline int PrivateMessageLoad::content_size() const {
+  return _internal_content_size();
+}
 inline void PrivateMessageLoad::clear_content() {
-  _impl_.content_.ClearToEmpty();
+  _impl_.content_.Clear();
 }
-inline const std::string& PrivateMessageLoad::content() const {
+inline std::string* PrivateMessageLoad::add_content() {
+  std::string* _s = _internal_add_content();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PrivateMessageLoad.content)
+  return _s;
+}
+inline const std::string& PrivateMessageLoad::_internal_content(int index) const {
+  return _impl_.content_.Get(index);
+}
+inline const std::string& PrivateMessageLoad::content(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.content)
-  return _internal_content();
+  return _internal_content(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_content(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.content_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::mutable_content(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.content)
+  return _impl_.content_.Mutable(index);
+}
+inline void PrivateMessageLoad::set_content(int index, const std::string& value) {
+  _impl_.content_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.content)
 }
-inline std::string* PrivateMessageLoad::mutable_content() {
-  std::string* _s = _internal_mutable_content();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.content)
-  return _s;
+inline void PrivateMessageLoad::set_content(int index, std::string&& value) {
+  _impl_.content_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.content)
 }
-inline const std::string& PrivateMessageLoad::_internal_content() const {
-  return _impl_.content_.Get();
+inline void PrivateMessageLoad::set_content(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PrivateMessageLoad.content)
 }
-inline void PrivateMessageLoad::_internal_set_content(const std::string& value) {
-  
-  _impl_.content_.Set(value, GetArenaForAllocation());
+inline void PrivateMessageLoad::set_content(int index, const char* value, size_t size) {
+  _impl_.content_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PrivateMessageLoad.content)
 }
-inline std::string* PrivateMessageLoad::_internal_mutable_content() {
-  
-  return _impl_.content_.Mutable(GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::_internal_add_content() {
+  return _impl_.content_.Add();
 }
-inline std::string* PrivateMessageLoad::release_content() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.content)
-  return _impl_.content_.Release();
+inline void PrivateMessageLoad::add_content(const std::string& value) {
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.content)
 }
-inline void PrivateMessageLoad::set_allocated_content(std::string* content) {
-  if (content != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.content_.SetAllocated(content, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.content_.IsDefault()) {
-    _impl_.content_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.content)
+inline void PrivateMessageLoad::add_content(std::string&& value) {
+  _impl_.content_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.content)
+}
+inline void PrivateMessageLoad::add_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.content_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PrivateMessageLoad.content)
+}
+inline void PrivateMessageLoad::add_content(const char* value, size_t size) {
+  _impl_.content_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PrivateMessageLoad.content)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PrivateMessageLoad::content() const {
+  // @@protoc_insertion_point(field_list:net_service.PrivateMessageLoad.content)
+  return _impl_.content_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PrivateMessageLoad::mutable_content() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PrivateMessageLoad.content)
+  return &_impl_.content_;
 }
 
-// string reciever = 3;
+// repeated string reciever = 3;
+inline int PrivateMessageLoad::_internal_reciever_size() const {
+  return _impl_.reciever_.size();
+}
+inline int PrivateMessageLoad::reciever_size() const {
+  return _internal_reciever_size();
+}
 inline void PrivateMessageLoad::clear_reciever() {
-  _impl_.reciever_.ClearToEmpty();
+  _impl_.reciever_.Clear();
 }
-inline const std::string& PrivateMessageLoad::reciever() const {
+inline std::string* PrivateMessageLoad::add_reciever() {
+  std::string* _s = _internal_add_reciever();
+  // @@protoc_insertion_point(field_add_mutable:net_service.PrivateMessageLoad.reciever)
+  return _s;
+}
+inline const std::string& PrivateMessageLoad::_internal_reciever(int index) const {
+  return _impl_.reciever_.Get(index);
+}
+inline const std::string& PrivateMessageLoad::reciever(int index) const {
   // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.reciever)
-  return _internal_reciever();
+  return _internal_reciever(index);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void PrivateMessageLoad::set_reciever(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.reciever_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::mutable_reciever(int index) {
+  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.reciever)
+  return _impl_.reciever_.Mutable(index);
+}
+inline void PrivateMessageLoad::set_reciever(int index, const std::string& value) {
+  _impl_.reciever_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.reciever)
 }
-inline std::string* PrivateMessageLoad::mutable_reciever() {
-  std::string* _s = _internal_mutable_reciever();
-  // @@protoc_insertion_point(field_mutable:net_service.PrivateMessageLoad.reciever)
-  return _s;
+inline void PrivateMessageLoad::set_reciever(int index, std::string&& value) {
+  _impl_.reciever_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.reciever)
 }
-inline const std::string& PrivateMessageLoad::_internal_reciever() const {
-  return _impl_.reciever_.Get();
+inline void PrivateMessageLoad::set_reciever(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.reciever_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:net_service.PrivateMessageLoad.reciever)
 }
-inline void PrivateMessageLoad::_internal_set_reciever(const std::string& value) {
-  
-  _impl_.reciever_.Set(value, GetArenaForAllocation());
+inline void PrivateMessageLoad::set_reciever(int index, const char* value, size_t size) {
+  _impl_.reciever_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:net_service.PrivateMessageLoad.reciever)
 }
-inline std::string* PrivateMessageLoad::_internal_mutable_reciever() {
-  
-  return _impl_.reciever_.Mutable(GetArenaForAllocation());
+inline std::string* PrivateMessageLoad::_internal_add_reciever() {
+  return _impl_.reciever_.Add();
 }
-inline std::string* PrivateMessageLoad::release_reciever() {
-  // @@protoc_insertion_point(field_release:net_service.PrivateMessageLoad.reciever)
-  return _impl_.reciever_.Release();
+inline void PrivateMessageLoad::add_reciever(const std::string& value) {
+  _impl_.reciever_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.reciever)
 }
-inline void PrivateMessageLoad::set_allocated_reciever(std::string* reciever) {
-  if (reciever != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.reciever_.SetAllocated(reciever, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.reciever_.IsDefault()) {
-    _impl_.reciever_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.reciever)
+inline void PrivateMessageLoad::add_reciever(std::string&& value) {
+  _impl_.reciever_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:net_service.PrivateMessageLoad.reciever)
 }
-
-// int64 position = 4;
-inline void PrivateMessageLoad::clear_position() {
-  _impl_.position_ = int64_t{0};
+inline void PrivateMessageLoad::add_reciever(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.reciever_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:net_service.PrivateMessageLoad.reciever)
 }
-inline int64_t PrivateMessageLoad::_internal_position() const {
-  return _impl_.position_;
+inline void PrivateMessageLoad::add_reciever(const char* value, size_t size) {
+  _impl_.reciever_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:net_service.PrivateMessageLoad.reciever)
 }
-inline int64_t PrivateMessageLoad::position() const {
-  // @@protoc_insertion_point(field_get:net_service.PrivateMessageLoad.position)
-  return _internal_position();
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+PrivateMessageLoad::reciever() const {
+  // @@protoc_insertion_point(field_list:net_service.PrivateMessageLoad.reciever)
+  return _impl_.reciever_;
 }
-inline void PrivateMessageLoad::_internal_set_position(int64_t value) {
-  
-  _impl_.position_ = value;
-}
-inline void PrivateMessageLoad::set_position(int64_t value) {
-  _internal_set_position(value);
-  // @@protoc_insertion_point(field_set:net_service.PrivateMessageLoad.position)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+PrivateMessageLoad::mutable_reciever() {
+  // @@protoc_insertion_point(field_mutable_list:net_service.PrivateMessageLoad.reciever)
+  return &_impl_.reciever_;
 }
 
-// string token = 5;
+// string token = 4;
 inline void PrivateMessageLoad::clear_token() {
   _impl_.token_.ClearToEmpty();
 }
@@ -2611,567 +2840,9 @@ inline void PrivateMessageLoad::set_allocated_token(std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:net_service.PrivateMessageLoad.token)
 }
 
-// -------------------------------------------------------------------
-
-// CredentialsSignIn
-
-// string login = 1;
-inline void CredentialsSignIn::clear_login() {
-  _impl_.login_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignIn::login() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignIn.login)
-  return _internal_login();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignIn::set_login(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.login_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignIn.login)
-}
-inline std::string* CredentialsSignIn::mutable_login() {
-  std::string* _s = _internal_mutable_login();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignIn.login)
-  return _s;
-}
-inline const std::string& CredentialsSignIn::_internal_login() const {
-  return _impl_.login_.Get();
-}
-inline void CredentialsSignIn::_internal_set_login(const std::string& value) {
-  
-  _impl_.login_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignIn::_internal_mutable_login() {
-  
-  return _impl_.login_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignIn::release_login() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignIn.login)
-  return _impl_.login_.Release();
-}
-inline void CredentialsSignIn::set_allocated_login(std::string* login) {
-  if (login != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.login_.SetAllocated(login, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.login_.IsDefault()) {
-    _impl_.login_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignIn.login)
-}
-
-// string hash = 2;
-inline void CredentialsSignIn::clear_hash() {
-  _impl_.hash_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignIn::hash() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignIn.hash)
-  return _internal_hash();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignIn::set_hash(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.hash_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignIn.hash)
-}
-inline std::string* CredentialsSignIn::mutable_hash() {
-  std::string* _s = _internal_mutable_hash();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignIn.hash)
-  return _s;
-}
-inline const std::string& CredentialsSignIn::_internal_hash() const {
-  return _impl_.hash_.Get();
-}
-inline void CredentialsSignIn::_internal_set_hash(const std::string& value) {
-  
-  _impl_.hash_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignIn::_internal_mutable_hash() {
-  
-  return _impl_.hash_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignIn::release_hash() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignIn.hash)
-  return _impl_.hash_.Release();
-}
-inline void CredentialsSignIn::set_allocated_hash(std::string* hash) {
-  if (hash != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.hash_.SetAllocated(hash, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.hash_.IsDefault()) {
-    _impl_.hash_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignIn.hash)
-}
-
-// string token = 3;
-inline void CredentialsSignIn::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignIn::token() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignIn.token)
-  return _internal_token();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignIn::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignIn.token)
-}
-inline std::string* CredentialsSignIn::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignIn.token)
-  return _s;
-}
-inline const std::string& CredentialsSignIn::_internal_token() const {
-  return _impl_.token_.Get();
-}
-inline void CredentialsSignIn::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignIn::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignIn::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignIn.token)
-  return _impl_.token_.Release();
-}
-inline void CredentialsSignIn::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignIn.token)
-}
-
-// -------------------------------------------------------------------
-
-// CredentialsSignUp
-
-// string login = 1;
-inline void CredentialsSignUp::clear_login() {
-  _impl_.login_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignUp::login() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.login)
-  return _internal_login();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignUp::set_login(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.login_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.login)
-}
-inline std::string* CredentialsSignUp::mutable_login() {
-  std::string* _s = _internal_mutable_login();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.login)
-  return _s;
-}
-inline const std::string& CredentialsSignUp::_internal_login() const {
-  return _impl_.login_.Get();
-}
-inline void CredentialsSignUp::_internal_set_login(const std::string& value) {
-  
-  _impl_.login_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::_internal_mutable_login() {
-  
-  return _impl_.login_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::release_login() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.login)
-  return _impl_.login_.Release();
-}
-inline void CredentialsSignUp::set_allocated_login(std::string* login) {
-  if (login != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.login_.SetAllocated(login, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.login_.IsDefault()) {
-    _impl_.login_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.login)
-}
-
-// string username = 2;
-inline void CredentialsSignUp::clear_username() {
-  _impl_.username_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignUp::username() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.username)
-  return _internal_username();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignUp::set_username(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.username_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.username)
-}
-inline std::string* CredentialsSignUp::mutable_username() {
-  std::string* _s = _internal_mutable_username();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.username)
-  return _s;
-}
-inline const std::string& CredentialsSignUp::_internal_username() const {
-  return _impl_.username_.Get();
-}
-inline void CredentialsSignUp::_internal_set_username(const std::string& value) {
-  
-  _impl_.username_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::_internal_mutable_username() {
-  
-  return _impl_.username_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::release_username() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.username)
-  return _impl_.username_.Release();
-}
-inline void CredentialsSignUp::set_allocated_username(std::string* username) {
-  if (username != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.username_.SetAllocated(username, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.username_.IsDefault()) {
-    _impl_.username_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.username)
-}
-
-// string hash = 3;
-inline void CredentialsSignUp::clear_hash() {
-  _impl_.hash_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignUp::hash() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.hash)
-  return _internal_hash();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignUp::set_hash(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.hash_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.hash)
-}
-inline std::string* CredentialsSignUp::mutable_hash() {
-  std::string* _s = _internal_mutable_hash();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.hash)
-  return _s;
-}
-inline const std::string& CredentialsSignUp::_internal_hash() const {
-  return _impl_.hash_.Get();
-}
-inline void CredentialsSignUp::_internal_set_hash(const std::string& value) {
-  
-  _impl_.hash_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::_internal_mutable_hash() {
-  
-  return _impl_.hash_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::release_hash() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.hash)
-  return _impl_.hash_.Release();
-}
-inline void CredentialsSignUp::set_allocated_hash(std::string* hash) {
-  if (hash != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.hash_.SetAllocated(hash, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.hash_.IsDefault()) {
-    _impl_.hash_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.hash)
-}
-
-// string token = 4;
-inline void CredentialsSignUp::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& CredentialsSignUp::token() const {
-  // @@protoc_insertion_point(field_get:net_service.CredentialsSignUp.token)
-  return _internal_token();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CredentialsSignUp::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.CredentialsSignUp.token)
-}
-inline std::string* CredentialsSignUp::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.CredentialsSignUp.token)
-  return _s;
-}
-inline const std::string& CredentialsSignUp::_internal_token() const {
-  return _impl_.token_.Get();
-}
-inline void CredentialsSignUp::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CredentialsSignUp::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.CredentialsSignUp.token)
-  return _impl_.token_.Release();
-}
-inline void CredentialsSignUp::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.CredentialsSignUp.token)
-}
-
-// -------------------------------------------------------------------
-
-// Uid
-
-// string id = 1;
-inline void Uid::clear_id() {
-  _impl_.id_.ClearToEmpty();
-}
-inline const std::string& Uid::id() const {
-  // @@protoc_insertion_point(field_get:net_service.Uid.id)
-  return _internal_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Uid::set_id(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.Uid.id)
-}
-inline std::string* Uid::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:net_service.Uid.id)
-  return _s;
-}
-inline const std::string& Uid::_internal_id() const {
-  return _impl_.id_.Get();
-}
-inline void Uid::_internal_set_id(const std::string& value) {
-  
-  _impl_.id_.Set(value, GetArenaForAllocation());
-}
-inline std::string* Uid::_internal_mutable_id() {
-  
-  return _impl_.id_.Mutable(GetArenaForAllocation());
-}
-inline std::string* Uid::release_id() {
-  // @@protoc_insertion_point(field_release:net_service.Uid.id)
-  return _impl_.id_.Release();
-}
-inline void Uid::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.id_.SetAllocated(id, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.id_.IsDefault()) {
-    _impl_.id_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.Uid.id)
-}
-
-// string token = 2;
-inline void Uid::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& Uid::token() const {
-  // @@protoc_insertion_point(field_get:net_service.Uid.token)
-  return _internal_token();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Uid::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.Uid.token)
-}
-inline std::string* Uid::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.Uid.token)
-  return _s;
-}
-inline const std::string& Uid::_internal_token() const {
-  return _impl_.token_.Get();
-}
-inline void Uid::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
-}
-inline std::string* Uid::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
-}
-inline std::string* Uid::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.Uid.token)
-  return _impl_.token_.Release();
-}
-inline void Uid::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.Uid.token)
-}
-
-// bool result = 3;
-inline void Uid::clear_result() {
-  _impl_.result_ = false;
-}
-inline bool Uid::_internal_result() const {
-  return _impl_.result_;
-}
-inline bool Uid::result() const {
-  // @@protoc_insertion_point(field_get:net_service.Uid.result)
-  return _internal_result();
-}
-inline void Uid::_internal_set_result(bool value) {
-  
-  _impl_.result_ = value;
-}
-inline void Uid::set_result(bool value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:net_service.Uid.result)
-}
-
-// -------------------------------------------------------------------
-
-// Token
-
-// string token = 1;
-inline void Token::clear_token() {
-  _impl_.token_.ClearToEmpty();
-}
-inline const std::string& Token::token() const {
-  // @@protoc_insertion_point(field_get:net_service.Token.token)
-  return _internal_token();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Token::set_token(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:net_service.Token.token)
-}
-inline std::string* Token::mutable_token() {
-  std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:net_service.Token.token)
-  return _s;
-}
-inline const std::string& Token::_internal_token() const {
-  return _impl_.token_.Get();
-}
-inline void Token::_internal_set_token(const std::string& value) {
-  
-  _impl_.token_.Set(value, GetArenaForAllocation());
-}
-inline std::string* Token::_internal_mutable_token() {
-  
-  return _impl_.token_.Mutable(GetArenaForAllocation());
-}
-inline std::string* Token::release_token() {
-  // @@protoc_insertion_point(field_release:net_service.Token.token)
-  return _impl_.token_.Release();
-}
-inline void Token::set_allocated_token(std::string* token) {
-  if (token != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:net_service.Token.token)
-}
-
-// bool result = 2;
-inline void Token::clear_result() {
-  _impl_.result_ = false;
-}
-inline bool Token::_internal_result() const {
-  return _impl_.result_;
-}
-inline bool Token::result() const {
-  // @@protoc_insertion_point(field_get:net_service.Token.result)
-  return _internal_result();
-}
-inline void Token::_internal_set_result(bool value) {
-  
-  _impl_.result_ = value;
-}
-inline void Token::set_result(bool value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:net_service.Token.result)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

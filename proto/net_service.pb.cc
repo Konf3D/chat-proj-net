@@ -21,6 +21,49 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace net_service {
+PROTOBUF_CONSTEXPR Token::Token(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.result_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct TokenDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TokenDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TokenDefaultTypeInternal() {}
+  union {
+    Token _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TokenDefaultTypeInternal _Token_default_instance_;
+PROTOBUF_CONSTEXPR CredentialsSignIn::CredentialsSignIn(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.login_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.hash_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CredentialsSignInDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CredentialsSignInDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CredentialsSignInDefaultTypeInternal() {}
+  union {
+    CredentialsSignIn _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CredentialsSignInDefaultTypeInternal _CredentialsSignIn_default_instance_;
+PROTOBUF_CONSTEXPR CredentialsSignUp::CredentialsSignUp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.login_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.username_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.hash_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CredentialsSignUpDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CredentialsSignUpDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CredentialsSignUpDefaultTypeInternal() {}
+  union {
+    CredentialsSignUp _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CredentialsSignUpDefaultTypeInternal _CredentialsSignUp_default_instance_;
 PROTOBUF_CONSTEXPR MsgPos::MsgPos(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -52,10 +95,9 @@ struct PublicMessageSaveDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PublicMessageSaveDefaultTypeInternal _PublicMessageSave_default_instance_;
 PROTOBUF_CONSTEXPR PublicMessageLoad::PublicMessageLoad(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sender_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.sender_)*/{}
+  , /*decltype(_impl_.content_)*/{}
   , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.position_)*/int64_t{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PublicMessageLoadDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PublicMessageLoadDefaultTypeInternal()
@@ -84,11 +126,10 @@ struct PrivateMessageSaveDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PrivateMessageSaveDefaultTypeInternal _PrivateMessageSave_default_instance_;
 PROTOBUF_CONSTEXPR PrivateMessageLoad::PrivateMessageLoad(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sender_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.reciever_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.sender_)*/{}
+  , /*decltype(_impl_.content_)*/{}
+  , /*decltype(_impl_.reciever_)*/{}
   , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.position_)*/int64_t{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PrivateMessageLoadDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PrivateMessageLoadDefaultTypeInternal()
@@ -99,72 +140,37 @@ struct PrivateMessageLoadDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PrivateMessageLoadDefaultTypeInternal _PrivateMessageLoad_default_instance_;
-PROTOBUF_CONSTEXPR CredentialsSignIn::CredentialsSignIn(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.login_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.hash_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct CredentialsSignInDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CredentialsSignInDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CredentialsSignInDefaultTypeInternal() {}
-  union {
-    CredentialsSignIn _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CredentialsSignInDefaultTypeInternal _CredentialsSignIn_default_instance_;
-PROTOBUF_CONSTEXPR CredentialsSignUp::CredentialsSignUp(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.login_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.username_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.hash_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct CredentialsSignUpDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CredentialsSignUpDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CredentialsSignUpDefaultTypeInternal() {}
-  union {
-    CredentialsSignUp _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CredentialsSignUpDefaultTypeInternal _CredentialsSignUp_default_instance_;
-PROTOBUF_CONSTEXPR Uid::Uid(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.result_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct UidDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UidDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UidDefaultTypeInternal() {}
-  union {
-    Uid _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UidDefaultTypeInternal _Uid_default_instance_;
-PROTOBUF_CONSTEXPR Token::Token(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.result_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct TokenDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR TokenDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~TokenDefaultTypeInternal() {}
-  union {
-    Token _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TokenDefaultTypeInternal _Token_default_instance_;
 }  // namespace net_service
-static ::_pb::Metadata file_level_metadata_net_5fservice_2eproto[9];
+static ::_pb::Metadata file_level_metadata_net_5fservice_2eproto[8];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_net_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_net_5fservice_2eproto = nullptr;
 
 const uint32_t TableStruct_net_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::net_service::Token, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::net_service::Token, _impl_.token_),
+  PROTOBUF_FIELD_OFFSET(::net_service::Token, _impl_.result_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _impl_.login_),
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _impl_.hash_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.login_),
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.username_),
+  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.hash_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::net_service::MsgPos, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -190,7 +196,6 @@ const uint32_t TableStruct_net_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.sender_),
   PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.content_),
-  PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.position_),
   PROTOBUF_FIELD_OFFSET(::net_service::PublicMessageLoad, _impl_.token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageSave, _internal_metadata_),
@@ -211,106 +216,65 @@ const uint32_t TableStruct_net_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VAR
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.sender_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.content_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.reciever_),
-  PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.position_),
   PROTOBUF_FIELD_OFFSET(::net_service::PrivateMessageLoad, _impl_.token_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _impl_.login_),
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _impl_.hash_),
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignIn, _impl_.token_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.login_),
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.username_),
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.hash_),
-  PROTOBUF_FIELD_OFFSET(::net_service::CredentialsSignUp, _impl_.token_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::net_service::Uid, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::net_service::Uid, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::net_service::Uid, _impl_.token_),
-  PROTOBUF_FIELD_OFFSET(::net_service::Uid, _impl_.result_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::net_service::Token, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::net_service::Token, _impl_.token_),
-  PROTOBUF_FIELD_OFFSET(::net_service::Token, _impl_.result_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::net_service::MsgPos)},
-  { 8, -1, -1, sizeof(::net_service::PublicMessageSave)},
-  { 17, -1, -1, sizeof(::net_service::PublicMessageLoad)},
-  { 27, -1, -1, sizeof(::net_service::PrivateMessageSave)},
-  { 37, -1, -1, sizeof(::net_service::PrivateMessageLoad)},
-  { 48, -1, -1, sizeof(::net_service::CredentialsSignIn)},
-  { 57, -1, -1, sizeof(::net_service::CredentialsSignUp)},
-  { 67, -1, -1, sizeof(::net_service::Uid)},
-  { 76, -1, -1, sizeof(::net_service::Token)},
+  { 0, -1, -1, sizeof(::net_service::Token)},
+  { 8, -1, -1, sizeof(::net_service::CredentialsSignIn)},
+  { 16, -1, -1, sizeof(::net_service::CredentialsSignUp)},
+  { 25, -1, -1, sizeof(::net_service::MsgPos)},
+  { 33, -1, -1, sizeof(::net_service::PublicMessageSave)},
+  { 42, -1, -1, sizeof(::net_service::PublicMessageLoad)},
+  { 51, -1, -1, sizeof(::net_service::PrivateMessageSave)},
+  { 61, -1, -1, sizeof(::net_service::PrivateMessageLoad)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::net_service::_Token_default_instance_._instance,
+  &::net_service::_CredentialsSignIn_default_instance_._instance,
+  &::net_service::_CredentialsSignUp_default_instance_._instance,
   &::net_service::_MsgPos_default_instance_._instance,
   &::net_service::_PublicMessageSave_default_instance_._instance,
   &::net_service::_PublicMessageLoad_default_instance_._instance,
   &::net_service::_PrivateMessageSave_default_instance_._instance,
   &::net_service::_PrivateMessageLoad_default_instance_._instance,
-  &::net_service::_CredentialsSignIn_default_instance_._instance,
-  &::net_service::_CredentialsSignUp_default_instance_._instance,
-  &::net_service::_Uid_default_instance_._instance,
-  &::net_service::_Token_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_net_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021net_service.proto\022\013net_service\"$\n\006MsgP"
-  "os\022\r\n\005token\030\001 \001(\t\022\013\n\003pos\030\002 \001(\003\"C\n\021Public"
-  "MessageSave\022\016\n\006sender\030\001 \001(\t\022\017\n\007content\030\002"
-  " \001(\t\022\r\n\005token\030\003 \001(\t\"U\n\021PublicMessageLoad"
-  "\022\016\n\006sender\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\020\n\010pos"
-  "ition\030\003 \001(\003\022\r\n\005token\030\004 \001(\t\"V\n\022PrivateMes"
-  "sageSave\022\016\n\006sender\030\001 \001(\t\022\017\n\007content\030\002 \001("
-  "\t\022\020\n\010reciever\030\003 \001(\t\022\r\n\005token\030\004 \001(\t\"h\n\022Pr"
-  "ivateMessageLoad\022\016\n\006sender\030\001 \001(\t\022\017\n\007cont"
-  "ent\030\002 \001(\t\022\020\n\010reciever\030\003 \001(\t\022\020\n\010position\030"
-  "\004 \001(\003\022\r\n\005token\030\005 \001(\t\"\?\n\021CredentialsSignI"
-  "n\022\r\n\005login\030\001 \001(\t\022\014\n\004hash\030\002 \001(\t\022\r\n\005token\030"
-  "\003 \001(\t\"Q\n\021CredentialsSignUp\022\r\n\005login\030\001 \001("
-  "\t\022\020\n\010username\030\002 \001(\t\022\014\n\004hash\030\003 \001(\t\022\r\n\005tok"
-  "en\030\004 \001(\t\"0\n\003Uid\022\n\n\002id\030\001 \001(\t\022\r\n\005token\030\002 \001"
-  "(\t\022\016\n\006result\030\003 \001(\010\"&\n\005Token\022\r\n\005token\030\001 \001"
-  "(\t\022\016\n\006result\030\002 \001(\0102\215\004\n\013net_service\022>\n\006si"
-  "gnUp\022\036.net_service.CredentialsSignUp\032\022.n"
-  "et_service.Token\"\000\022>\n\006signIn\022\036.net_servi"
-  "ce.CredentialsSignIn\032\022.net_service.Token"
-  "\"\000\0223\n\007signOff\022\022.net_service.Token\032\022.net_"
-  "service.Token\"\000\022/\n\007getName\022\020.net_service"
-  ".Uid\032\020.net_service.Uid\"\000\022=\n\021savePublicMe"
-  "ssage\022\022.net_service.Token\032\022.net_service."
-  "Token\"\000\022K\n\022getPublicMessagess\022\023.net_serv"
-  "ice.MsgPos\032\036.net_service.PublicMessageLo"
-  "ad\"\000\022>\n\022savePrivateMessage\022\022.net_service"
-  ".Token\032\022.net_service.Token\"\000\022L\n\022getPriva"
-  "teMessages\022\023.net_service.MsgPos\032\037.net_se"
-  "rvice.PrivateMessageLoad\"\000b\006proto3"
+  "\n\021net_service.proto\022\013net_service\"&\n\005Toke"
+  "n\022\r\n\005token\030\001 \001(\t\022\016\n\006result\030\002 \001(\010\"0\n\021Cred"
+  "entialsSignIn\022\r\n\005login\030\001 \001(\t\022\014\n\004hash\030\002 \001"
+  "(\t\"B\n\021CredentialsSignUp\022\r\n\005login\030\001 \001(\t\022\020"
+  "\n\010username\030\002 \001(\t\022\014\n\004hash\030\003 \001(\t\"$\n\006MsgPos"
+  "\022\r\n\005token\030\001 \001(\t\022\013\n\003pos\030\002 \001(\003\"C\n\021PublicMe"
+  "ssageSave\022\016\n\006sender\030\001 \001(\t\022\017\n\007content\030\002 \001"
+  "(\t\022\r\n\005token\030\003 \001(\t\"C\n\021PublicMessageLoad\022\016"
+  "\n\006sender\030\001 \003(\t\022\017\n\007content\030\002 \003(\t\022\r\n\005token"
+  "\030\003 \001(\t\"V\n\022PrivateMessageSave\022\016\n\006sender\030\001"
+  " \001(\t\022\017\n\007content\030\002 \001(\t\022\020\n\010reciever\030\003 \001(\t\022"
+  "\r\n\005token\030\004 \001(\t\"V\n\022PrivateMessageLoad\022\016\n\006"
+  "sender\030\001 \003(\t\022\017\n\007content\030\002 \003(\t\022\020\n\010recieve"
+  "r\030\003 \003(\t\022\r\n\005token\030\004 \001(\t2\253\004\n\013net_service\022>"
+  "\n\006signUp\022\036.net_service.CredentialsSignUp"
+  "\032\022.net_service.Token\"\000\022>\n\006signIn\022\036.net_s"
+  "ervice.CredentialsSignIn\032\022.net_service.T"
+  "oken\"\000\0223\n\007signOff\022\022.net_service.Token\032\022."
+  "net_service.Token\"\000\022I\n\021savePublicMessage"
+  "\022\036.net_service.PublicMessageSave\032\022.net_s"
+  "ervice.Token\"\000\022I\n\021getPublicMessages\022\022.ne"
+  "t_service.Token\032\036.net_service.PublicMess"
+  "ageLoad\"\000\022K\n\022savePrivateMessage\022\037.net_se"
+  "rvice.PrivateMessageSave\032\022.net_service.T"
+  "oken\"\000\022K\n\022getPrivateMessages\022\022.net_servi"
+  "ce.Token\032\037.net_service.PrivateMessageLoa"
+  "d\"\000\0227\n\013getUsername\022\022.net_service.Token\032\022"
+  ".net_service.Token\"\000b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_net_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_net_5fservice_2eproto = {
-    false, false, 1194, descriptor_table_protodef_net_5fservice_2eproto,
+    false, false, 1108, descriptor_table_protodef_net_5fservice_2eproto,
     "net_service.proto",
-    &descriptor_table_net_5fservice_2eproto_once, nullptr, 0, 9,
+    &descriptor_table_net_5fservice_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_net_5fservice_2eproto::offsets,
     file_level_metadata_net_5fservice_2eproto, file_level_enum_descriptors_net_5fservice_2eproto,
     file_level_service_descriptors_net_5fservice_2eproto,
@@ -322,6 +286,792 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_net_5fse
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_net_5fservice_2eproto(&descriptor_table_net_5fservice_2eproto);
 namespace net_service {
+
+// ===================================================================
+
+class Token::_Internal {
+ public:
+};
+
+Token::Token(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:net_service.Token)
+}
+Token::Token(const Token& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Token* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.result_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    _this->_impl_.token_.Set(from._internal_token(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.result_ = from._impl_.result_;
+  // @@protoc_insertion_point(copy_constructor:net_service.Token)
+}
+
+inline void Token::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.result_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Token::~Token() {
+  // @@protoc_insertion_point(destructor:net_service.Token)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Token::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.token_.Destroy();
+}
+
+void Token::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Token::Clear() {
+// @@protoc_insertion_point(message_clear_start:net_service.Token)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.token_.ClearToEmpty();
+  _impl_.result_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Token::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "net_service.Token.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool result = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.result_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Token::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:net_service.Token)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "net_service.Token.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // bool result = 2;
+  if (this->_internal_result() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_result(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:net_service.Token)
+  return target;
+}
+
+size_t Token::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:net_service.Token)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  // bool result = 2;
+  if (this->_internal_result() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Token::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Token::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Token::GetClassData() const { return &_class_data_; }
+
+
+void Token::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Token*>(&to_msg);
+  auto& from = static_cast<const Token&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.Token)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _this->_internal_set_token(from._internal_token());
+  }
+  if (from._internal_result() != 0) {
+    _this->_internal_set_result(from._internal_result());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Token::CopyFrom(const Token& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:net_service.Token)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Token::IsInitialized() const {
+  return true;
+}
+
+void Token::InternalSwap(Token* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.token_, lhs_arena,
+      &other->_impl_.token_, rhs_arena
+  );
+  swap(_impl_.result_, other->_impl_.result_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Token::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
+      file_level_metadata_net_5fservice_2eproto[0]);
+}
+
+// ===================================================================
+
+class CredentialsSignIn::_Internal {
+ public:
+};
+
+CredentialsSignIn::CredentialsSignIn(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:net_service.CredentialsSignIn)
+}
+CredentialsSignIn::CredentialsSignIn(const CredentialsSignIn& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CredentialsSignIn* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.login_){}
+    , decltype(_impl_.hash_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.login_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.login_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_login().empty()) {
+    _this->_impl_.login_.Set(from._internal_login(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.hash_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.hash_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_hash().empty()) {
+    _this->_impl_.hash_.Set(from._internal_hash(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:net_service.CredentialsSignIn)
+}
+
+inline void CredentialsSignIn::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.login_){}
+    , decltype(_impl_.hash_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.login_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.login_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.hash_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.hash_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+CredentialsSignIn::~CredentialsSignIn() {
+  // @@protoc_insertion_point(destructor:net_service.CredentialsSignIn)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CredentialsSignIn::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.login_.Destroy();
+  _impl_.hash_.Destroy();
+}
+
+void CredentialsSignIn::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CredentialsSignIn::Clear() {
+// @@protoc_insertion_point(message_clear_start:net_service.CredentialsSignIn)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.login_.ClearToEmpty();
+  _impl_.hash_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CredentialsSignIn::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string login = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_login();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignIn.login"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string hash = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_hash();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignIn.hash"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CredentialsSignIn::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:net_service.CredentialsSignIn)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string login = 1;
+  if (!this->_internal_login().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_login().data(), static_cast<int>(this->_internal_login().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "net_service.CredentialsSignIn.login");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_login(), target);
+  }
+
+  // string hash = 2;
+  if (!this->_internal_hash().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_hash().data(), static_cast<int>(this->_internal_hash().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "net_service.CredentialsSignIn.hash");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_hash(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:net_service.CredentialsSignIn)
+  return target;
+}
+
+size_t CredentialsSignIn::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:net_service.CredentialsSignIn)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string login = 1;
+  if (!this->_internal_login().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_login());
+  }
+
+  // string hash = 2;
+  if (!this->_internal_hash().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_hash());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CredentialsSignIn::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CredentialsSignIn::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CredentialsSignIn::GetClassData() const { return &_class_data_; }
+
+
+void CredentialsSignIn::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CredentialsSignIn*>(&to_msg);
+  auto& from = static_cast<const CredentialsSignIn&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.CredentialsSignIn)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_login().empty()) {
+    _this->_internal_set_login(from._internal_login());
+  }
+  if (!from._internal_hash().empty()) {
+    _this->_internal_set_hash(from._internal_hash());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CredentialsSignIn::CopyFrom(const CredentialsSignIn& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:net_service.CredentialsSignIn)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CredentialsSignIn::IsInitialized() const {
+  return true;
+}
+
+void CredentialsSignIn::InternalSwap(CredentialsSignIn* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.login_, lhs_arena,
+      &other->_impl_.login_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.hash_, lhs_arena,
+      &other->_impl_.hash_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CredentialsSignIn::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
+      file_level_metadata_net_5fservice_2eproto[1]);
+}
+
+// ===================================================================
+
+class CredentialsSignUp::_Internal {
+ public:
+};
+
+CredentialsSignUp::CredentialsSignUp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:net_service.CredentialsSignUp)
+}
+CredentialsSignUp::CredentialsSignUp(const CredentialsSignUp& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CredentialsSignUp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.login_){}
+    , decltype(_impl_.username_){}
+    , decltype(_impl_.hash_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.login_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.login_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_login().empty()) {
+    _this->_impl_.login_.Set(from._internal_login(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.username_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.username_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_username().empty()) {
+    _this->_impl_.username_.Set(from._internal_username(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.hash_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.hash_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_hash().empty()) {
+    _this->_impl_.hash_.Set(from._internal_hash(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:net_service.CredentialsSignUp)
+}
+
+inline void CredentialsSignUp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.login_){}
+    , decltype(_impl_.username_){}
+    , decltype(_impl_.hash_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.login_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.login_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.username_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.username_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.hash_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.hash_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+CredentialsSignUp::~CredentialsSignUp() {
+  // @@protoc_insertion_point(destructor:net_service.CredentialsSignUp)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CredentialsSignUp::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.login_.Destroy();
+  _impl_.username_.Destroy();
+  _impl_.hash_.Destroy();
+}
+
+void CredentialsSignUp::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CredentialsSignUp::Clear() {
+// @@protoc_insertion_point(message_clear_start:net_service.CredentialsSignUp)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.login_.ClearToEmpty();
+  _impl_.username_.ClearToEmpty();
+  _impl_.hash_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CredentialsSignUp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string login = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_login();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.login"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string username = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_username();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.username"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string hash = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_hash();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.hash"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CredentialsSignUp::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:net_service.CredentialsSignUp)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string login = 1;
+  if (!this->_internal_login().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_login().data(), static_cast<int>(this->_internal_login().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "net_service.CredentialsSignUp.login");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_login(), target);
+  }
+
+  // string username = 2;
+  if (!this->_internal_username().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "net_service.CredentialsSignUp.username");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_username(), target);
+  }
+
+  // string hash = 3;
+  if (!this->_internal_hash().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_hash().data(), static_cast<int>(this->_internal_hash().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "net_service.CredentialsSignUp.hash");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_hash(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:net_service.CredentialsSignUp)
+  return target;
+}
+
+size_t CredentialsSignUp::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:net_service.CredentialsSignUp)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string login = 1;
+  if (!this->_internal_login().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_login());
+  }
+
+  // string username = 2;
+  if (!this->_internal_username().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_username());
+  }
+
+  // string hash = 3;
+  if (!this->_internal_hash().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_hash());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CredentialsSignUp::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CredentialsSignUp::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CredentialsSignUp::GetClassData() const { return &_class_data_; }
+
+
+void CredentialsSignUp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CredentialsSignUp*>(&to_msg);
+  auto& from = static_cast<const CredentialsSignUp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.CredentialsSignUp)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_login().empty()) {
+    _this->_internal_set_login(from._internal_login());
+  }
+  if (!from._internal_username().empty()) {
+    _this->_internal_set_username(from._internal_username());
+  }
+  if (!from._internal_hash().empty()) {
+    _this->_internal_set_hash(from._internal_hash());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CredentialsSignUp::CopyFrom(const CredentialsSignUp& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:net_service.CredentialsSignUp)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CredentialsSignUp::IsInitialized() const {
+  return true;
+}
+
+void CredentialsSignUp::InternalSwap(CredentialsSignUp* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.login_, lhs_arena,
+      &other->_impl_.login_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.username_, lhs_arena,
+      &other->_impl_.username_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.hash_, lhs_arena,
+      &other->_impl_.hash_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CredentialsSignUp::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
+      file_level_metadata_net_5fservice_2eproto[2]);
+}
 
 // ===================================================================
 
@@ -550,7 +1300,7 @@ void MsgPos::InternalSwap(MsgPos* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MsgPos::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[0]);
+      file_level_metadata_net_5fservice_2eproto[3]);
 }
 
 // ===================================================================
@@ -853,7 +1603,7 @@ void PublicMessageSave::InternalSwap(PublicMessageSave* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PublicMessageSave::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[1]);
+      file_level_metadata_net_5fservice_2eproto[4]);
 }
 
 // ===================================================================
@@ -872,29 +1622,12 @@ PublicMessageLoad::PublicMessageLoad(const PublicMessageLoad& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   PublicMessageLoad* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
+      decltype(_impl_.sender_){from._impl_.sender_}
+    , decltype(_impl_.content_){from._impl_.content_}
     , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_sender().empty()) {
-    _this->_impl_.sender_.Set(from._internal_sender(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_content().empty()) {
-    _this->_impl_.content_.Set(from._internal_content(), 
-      _this->GetArenaForAllocation());
-  }
   _impl_.token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.token_.Set("", GetArenaForAllocation());
@@ -903,7 +1636,6 @@ PublicMessageLoad::PublicMessageLoad(const PublicMessageLoad& from)
     _this->_impl_.token_.Set(from._internal_token(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.position_ = from._impl_.position_;
   // @@protoc_insertion_point(copy_constructor:net_service.PublicMessageLoad)
 }
 
@@ -912,20 +1644,11 @@ inline void PublicMessageLoad::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
+      decltype(_impl_.sender_){arena}
+    , decltype(_impl_.content_){arena}
     , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){int64_t{0}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.token_.Set("", GetArenaForAllocation());
@@ -943,8 +1666,8 @@ PublicMessageLoad::~PublicMessageLoad() {
 
 inline void PublicMessageLoad::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.sender_.Destroy();
-  _impl_.content_.Destroy();
+  _impl_.sender_.~RepeatedPtrField();
+  _impl_.content_.~RepeatedPtrField();
   _impl_.token_.Destroy();
 }
 
@@ -958,10 +1681,9 @@ void PublicMessageLoad::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.sender_.ClearToEmpty();
-  _impl_.content_.ClearToEmpty();
+  _impl_.sender_.Clear();
+  _impl_.content_.Clear();
   _impl_.token_.ClearToEmpty();
-  _impl_.position_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -971,37 +1693,39 @@ const char* PublicMessageLoad::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string sender = 1;
+      // repeated string sender = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_sender();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.sender"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_sender();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.sender"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // string content = 2;
+      // repeated string content = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_content();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.content"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_content();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PublicMessageLoad.content"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // int64 position = 3;
+      // string token = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.position_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_token();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1038,40 +1762,34 @@ uint8_t* PublicMessageLoad::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
+  // repeated string sender = 1;
+  for (int i = 0, n = this->_internal_sender_size(); i < n; i++) {
+    const auto& s = this->_internal_sender(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sender().data(), static_cast<int>(this->_internal_sender().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PublicMessageLoad.sender");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_sender(), target);
+    target = stream->WriteString(1, s, target);
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
+  // repeated string content = 2;
+  for (int i = 0, n = this->_internal_content_size(); i < n; i++) {
+    const auto& s = this->_internal_content(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PublicMessageLoad.content");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_content(), target);
+    target = stream->WriteString(2, s, target);
   }
 
-  // int64 position = 3;
-  if (this->_internal_position() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_position(), target);
-  }
-
-  // string token = 4;
+  // string token = 3;
   if (!this->_internal_token().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PublicMessageLoad.token");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_token(), target);
+        3, this->_internal_token(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1090,30 +1808,27 @@ size_t PublicMessageLoad::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sender());
+  // repeated string sender = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.sender_.size());
+  for (int i = 0, n = _impl_.sender_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.sender_.Get(i));
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_content());
+  // repeated string content = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.content_.size());
+  for (int i = 0, n = _impl_.content_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.content_.Get(i));
   }
 
-  // string token = 4;
+  // string token = 3;
   if (!this->_internal_token().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_token());
-  }
-
-  // int64 position = 3;
-  if (this->_internal_position() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_position());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1134,17 +1849,10 @@ void PublicMessageLoad::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_sender().empty()) {
-    _this->_internal_set_sender(from._internal_sender());
-  }
-  if (!from._internal_content().empty()) {
-    _this->_internal_set_content(from._internal_content());
-  }
+  _this->_impl_.sender_.MergeFrom(from._impl_.sender_);
+  _this->_impl_.content_.MergeFrom(from._impl_.content_);
   if (!from._internal_token().empty()) {
     _this->_internal_set_token(from._internal_token());
-  }
-  if (from._internal_position() != 0) {
-    _this->_internal_set_position(from._internal_position());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1165,25 +1873,18 @@ void PublicMessageLoad::InternalSwap(PublicMessageLoad* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.sender_, lhs_arena,
-      &other->_impl_.sender_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.content_, lhs_arena,
-      &other->_impl_.content_, rhs_arena
-  );
+  _impl_.sender_.InternalSwap(&other->_impl_.sender_);
+  _impl_.content_.InternalSwap(&other->_impl_.content_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.token_, lhs_arena,
       &other->_impl_.token_, rhs_arena
   );
-  swap(_impl_.position_, other->_impl_.position_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PublicMessageLoad::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[2]);
+      file_level_metadata_net_5fservice_2eproto[5]);
 }
 
 // ===================================================================
@@ -1536,7 +2237,7 @@ void PrivateMessageSave::InternalSwap(PrivateMessageSave* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessageSave::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[3]);
+      file_level_metadata_net_5fservice_2eproto[6]);
 }
 
 // ===================================================================
@@ -1555,38 +2256,13 @@ PrivateMessageLoad::PrivateMessageLoad(const PrivateMessageLoad& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   PrivateMessageLoad* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
-    , decltype(_impl_.reciever_){}
+      decltype(_impl_.sender_){from._impl_.sender_}
+    , decltype(_impl_.content_){from._impl_.content_}
+    , decltype(_impl_.reciever_){from._impl_.reciever_}
     , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_sender().empty()) {
-    _this->_impl_.sender_.Set(from._internal_sender(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_content().empty()) {
-    _this->_impl_.content_.Set(from._internal_content(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.reciever_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.reciever_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_reciever().empty()) {
-    _this->_impl_.reciever_.Set(from._internal_reciever(), 
-      _this->GetArenaForAllocation());
-  }
   _impl_.token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.token_.Set("", GetArenaForAllocation());
@@ -1595,7 +2271,6 @@ PrivateMessageLoad::PrivateMessageLoad(const PrivateMessageLoad& from)
     _this->_impl_.token_.Set(from._internal_token(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.position_ = from._impl_.position_;
   // @@protoc_insertion_point(copy_constructor:net_service.PrivateMessageLoad)
 }
 
@@ -1604,25 +2279,12 @@ inline void PrivateMessageLoad::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sender_){}
-    , decltype(_impl_.content_){}
-    , decltype(_impl_.reciever_){}
+      decltype(_impl_.sender_){arena}
+    , decltype(_impl_.content_){arena}
+    , decltype(_impl_.reciever_){arena}
     , decltype(_impl_.token_){}
-    , decltype(_impl_.position_){int64_t{0}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.sender_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sender_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.content_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.content_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.reciever_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.reciever_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.token_.Set("", GetArenaForAllocation());
@@ -1640,9 +2302,9 @@ PrivateMessageLoad::~PrivateMessageLoad() {
 
 inline void PrivateMessageLoad::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.sender_.Destroy();
-  _impl_.content_.Destroy();
-  _impl_.reciever_.Destroy();
+  _impl_.sender_.~RepeatedPtrField();
+  _impl_.content_.~RepeatedPtrField();
+  _impl_.reciever_.~RepeatedPtrField();
   _impl_.token_.Destroy();
 }
 
@@ -1656,11 +2318,10 @@ void PrivateMessageLoad::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.sender_.ClearToEmpty();
-  _impl_.content_.ClearToEmpty();
-  _impl_.reciever_.ClearToEmpty();
+  _impl_.sender_.Clear();
+  _impl_.content_.Clear();
+  _impl_.reciever_.Clear();
   _impl_.token_.ClearToEmpty();
-  _impl_.position_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1670,47 +2331,54 @@ const char* PrivateMessageLoad::_InternalParse(const char* ptr, ::_pbi::ParseCon
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string sender = 1;
+      // repeated string sender = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_sender();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.sender"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_sender();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.sender"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // string content = 2;
+      // repeated string content = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_content();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.content"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_content();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.content"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // string reciever = 3;
+      // repeated string reciever = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_reciever();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.reciever"));
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_reciever();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "net_service.PrivateMessageLoad.reciever"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // int64 position = 4;
+      // string token = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.position_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_token();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1747,50 +2415,44 @@ uint8_t* PrivateMessageLoad::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
+  // repeated string sender = 1;
+  for (int i = 0, n = this->_internal_sender_size(); i < n; i++) {
+    const auto& s = this->_internal_sender(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sender().data(), static_cast<int>(this->_internal_sender().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.sender");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_sender(), target);
+    target = stream->WriteString(1, s, target);
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
+  // repeated string content = 2;
+  for (int i = 0, n = this->_internal_content_size(); i < n; i++) {
+    const auto& s = this->_internal_content(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.content");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_content(), target);
+    target = stream->WriteString(2, s, target);
   }
 
-  // string reciever = 3;
-  if (!this->_internal_reciever().empty()) {
+  // repeated string reciever = 3;
+  for (int i = 0, n = this->_internal_reciever_size(); i < n; i++) {
+    const auto& s = this->_internal_reciever(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_reciever().data(), static_cast<int>(this->_internal_reciever().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.reciever");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_reciever(), target);
+    target = stream->WriteString(3, s, target);
   }
 
-  // int64 position = 4;
-  if (this->_internal_position() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(4, this->_internal_position(), target);
-  }
-
-  // string token = 5;
+  // string token = 4;
   if (!this->_internal_token().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "net_service.PrivateMessageLoad.token");
     target = stream->WriteStringMaybeAliased(
-        5, this->_internal_token(), target);
+        4, this->_internal_token(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1809,37 +2471,35 @@ size_t PrivateMessageLoad::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string sender = 1;
-  if (!this->_internal_sender().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sender());
+  // repeated string sender = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.sender_.size());
+  for (int i = 0, n = _impl_.sender_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.sender_.Get(i));
   }
 
-  // string content = 2;
-  if (!this->_internal_content().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_content());
+  // repeated string content = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.content_.size());
+  for (int i = 0, n = _impl_.content_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.content_.Get(i));
   }
 
-  // string reciever = 3;
-  if (!this->_internal_reciever().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_reciever());
+  // repeated string reciever = 3;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.reciever_.size());
+  for (int i = 0, n = _impl_.reciever_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.reciever_.Get(i));
   }
 
-  // string token = 5;
+  // string token = 4;
   if (!this->_internal_token().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_token());
-  }
-
-  // int64 position = 4;
-  if (this->_internal_position() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_position());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1860,20 +2520,11 @@ void PrivateMessageLoad::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_sender().empty()) {
-    _this->_internal_set_sender(from._internal_sender());
-  }
-  if (!from._internal_content().empty()) {
-    _this->_internal_set_content(from._internal_content());
-  }
-  if (!from._internal_reciever().empty()) {
-    _this->_internal_set_reciever(from._internal_reciever());
-  }
+  _this->_impl_.sender_.MergeFrom(from._impl_.sender_);
+  _this->_impl_.content_.MergeFrom(from._impl_.content_);
+  _this->_impl_.reciever_.MergeFrom(from._impl_.reciever_);
   if (!from._internal_token().empty()) {
     _this->_internal_set_token(from._internal_token());
-  }
-  if (from._internal_position() != 0) {
-    _this->_internal_set_position(from._internal_position());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1894,1200 +2545,36 @@ void PrivateMessageLoad::InternalSwap(PrivateMessageLoad* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.sender_, lhs_arena,
-      &other->_impl_.sender_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.content_, lhs_arena,
-      &other->_impl_.content_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.reciever_, lhs_arena,
-      &other->_impl_.reciever_, rhs_arena
-  );
+  _impl_.sender_.InternalSwap(&other->_impl_.sender_);
+  _impl_.content_.InternalSwap(&other->_impl_.content_);
+  _impl_.reciever_.InternalSwap(&other->_impl_.reciever_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.token_, lhs_arena,
       &other->_impl_.token_, rhs_arena
   );
-  swap(_impl_.position_, other->_impl_.position_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessageLoad::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[4]);
-}
-
-// ===================================================================
-
-class CredentialsSignIn::_Internal {
- public:
-};
-
-CredentialsSignIn::CredentialsSignIn(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:net_service.CredentialsSignIn)
-}
-CredentialsSignIn::CredentialsSignIn(const CredentialsSignIn& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CredentialsSignIn* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.login_){}
-    , decltype(_impl_.hash_){}
-    , decltype(_impl_.token_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.login_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.login_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_login().empty()) {
-    _this->_impl_.login_.Set(from._internal_login(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.hash_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.hash_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_hash().empty()) {
-    _this->_impl_.hash_.Set(from._internal_hash(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:net_service.CredentialsSignIn)
-}
-
-inline void CredentialsSignIn::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.login_){}
-    , decltype(_impl_.hash_){}
-    , decltype(_impl_.token_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.login_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.login_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.hash_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.hash_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-CredentialsSignIn::~CredentialsSignIn() {
-  // @@protoc_insertion_point(destructor:net_service.CredentialsSignIn)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void CredentialsSignIn::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.login_.Destroy();
-  _impl_.hash_.Destroy();
-  _impl_.token_.Destroy();
-}
-
-void CredentialsSignIn::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void CredentialsSignIn::Clear() {
-// @@protoc_insertion_point(message_clear_start:net_service.CredentialsSignIn)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.login_.ClearToEmpty();
-  _impl_.hash_.ClearToEmpty();
-  _impl_.token_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* CredentialsSignIn::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string login = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_login();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignIn.login"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string hash = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_hash();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignIn.hash"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignIn.token"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* CredentialsSignIn::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:net_service.CredentialsSignIn)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string login = 1;
-  if (!this->_internal_login().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_login().data(), static_cast<int>(this->_internal_login().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignIn.login");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_login(), target);
-  }
-
-  // string hash = 2;
-  if (!this->_internal_hash().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_hash().data(), static_cast<int>(this->_internal_hash().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignIn.hash");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_hash(), target);
-  }
-
-  // string token = 3;
-  if (!this->_internal_token().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignIn.token");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_token(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:net_service.CredentialsSignIn)
-  return target;
-}
-
-size_t CredentialsSignIn::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:net_service.CredentialsSignIn)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string login = 1;
-  if (!this->_internal_login().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_login());
-  }
-
-  // string hash = 2;
-  if (!this->_internal_hash().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_hash());
-  }
-
-  // string token = 3;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CredentialsSignIn::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CredentialsSignIn::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CredentialsSignIn::GetClassData() const { return &_class_data_; }
-
-
-void CredentialsSignIn::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CredentialsSignIn*>(&to_msg);
-  auto& from = static_cast<const CredentialsSignIn&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.CredentialsSignIn)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_login().empty()) {
-    _this->_internal_set_login(from._internal_login());
-  }
-  if (!from._internal_hash().empty()) {
-    _this->_internal_set_hash(from._internal_hash());
-  }
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void CredentialsSignIn::CopyFrom(const CredentialsSignIn& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:net_service.CredentialsSignIn)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CredentialsSignIn::IsInitialized() const {
-  return true;
-}
-
-void CredentialsSignIn::InternalSwap(CredentialsSignIn* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.login_, lhs_arena,
-      &other->_impl_.login_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.hash_, lhs_arena,
-      &other->_impl_.hash_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata CredentialsSignIn::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[5]);
-}
-
-// ===================================================================
-
-class CredentialsSignUp::_Internal {
- public:
-};
-
-CredentialsSignUp::CredentialsSignUp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:net_service.CredentialsSignUp)
-}
-CredentialsSignUp::CredentialsSignUp(const CredentialsSignUp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CredentialsSignUp* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.login_){}
-    , decltype(_impl_.username_){}
-    , decltype(_impl_.hash_){}
-    , decltype(_impl_.token_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.login_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.login_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_login().empty()) {
-    _this->_impl_.login_.Set(from._internal_login(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.username_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.username_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_username().empty()) {
-    _this->_impl_.username_.Set(from._internal_username(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.hash_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.hash_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_hash().empty()) {
-    _this->_impl_.hash_.Set(from._internal_hash(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:net_service.CredentialsSignUp)
-}
-
-inline void CredentialsSignUp::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.login_){}
-    , decltype(_impl_.username_){}
-    , decltype(_impl_.hash_){}
-    , decltype(_impl_.token_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.login_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.login_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.username_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.username_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.hash_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.hash_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-CredentialsSignUp::~CredentialsSignUp() {
-  // @@protoc_insertion_point(destructor:net_service.CredentialsSignUp)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void CredentialsSignUp::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.login_.Destroy();
-  _impl_.username_.Destroy();
-  _impl_.hash_.Destroy();
-  _impl_.token_.Destroy();
-}
-
-void CredentialsSignUp::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void CredentialsSignUp::Clear() {
-// @@protoc_insertion_point(message_clear_start:net_service.CredentialsSignUp)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.login_.ClearToEmpty();
-  _impl_.username_.ClearToEmpty();
-  _impl_.hash_.ClearToEmpty();
-  _impl_.token_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* CredentialsSignUp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string login = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_login();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.login"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string username = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_username();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.username"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string hash = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_hash();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.hash"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.CredentialsSignUp.token"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* CredentialsSignUp::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:net_service.CredentialsSignUp)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string login = 1;
-  if (!this->_internal_login().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_login().data(), static_cast<int>(this->_internal_login().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignUp.login");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_login(), target);
-  }
-
-  // string username = 2;
-  if (!this->_internal_username().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignUp.username");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_username(), target);
-  }
-
-  // string hash = 3;
-  if (!this->_internal_hash().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_hash().data(), static_cast<int>(this->_internal_hash().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignUp.hash");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_hash(), target);
-  }
-
-  // string token = 4;
-  if (!this->_internal_token().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.CredentialsSignUp.token");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_token(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:net_service.CredentialsSignUp)
-  return target;
-}
-
-size_t CredentialsSignUp::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:net_service.CredentialsSignUp)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string login = 1;
-  if (!this->_internal_login().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_login());
-  }
-
-  // string username = 2;
-  if (!this->_internal_username().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_username());
-  }
-
-  // string hash = 3;
-  if (!this->_internal_hash().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_hash());
-  }
-
-  // string token = 4;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CredentialsSignUp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CredentialsSignUp::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CredentialsSignUp::GetClassData() const { return &_class_data_; }
-
-
-void CredentialsSignUp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CredentialsSignUp*>(&to_msg);
-  auto& from = static_cast<const CredentialsSignUp&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.CredentialsSignUp)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_login().empty()) {
-    _this->_internal_set_login(from._internal_login());
-  }
-  if (!from._internal_username().empty()) {
-    _this->_internal_set_username(from._internal_username());
-  }
-  if (!from._internal_hash().empty()) {
-    _this->_internal_set_hash(from._internal_hash());
-  }
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void CredentialsSignUp::CopyFrom(const CredentialsSignUp& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:net_service.CredentialsSignUp)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CredentialsSignUp::IsInitialized() const {
-  return true;
-}
-
-void CredentialsSignUp::InternalSwap(CredentialsSignUp* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.login_, lhs_arena,
-      &other->_impl_.login_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.username_, lhs_arena,
-      &other->_impl_.username_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.hash_, lhs_arena,
-      &other->_impl_.hash_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata CredentialsSignUp::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[6]);
-}
-
-// ===================================================================
-
-class Uid::_Internal {
- public:
-};
-
-Uid::Uid(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:net_service.Uid)
-}
-Uid::Uid(const Uid& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Uid* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){}
-    , decltype(_impl_.token_){}
-    , decltype(_impl_.result_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.id_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    _this->_impl_.id_.Set(from._internal_id(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.result_ = from._impl_.result_;
-  // @@protoc_insertion_point(copy_constructor:net_service.Uid)
-}
-
-inline void Uid::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){}
-    , decltype(_impl_.token_){}
-    , decltype(_impl_.result_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.id_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-Uid::~Uid() {
-  // @@protoc_insertion_point(destructor:net_service.Uid)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void Uid::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.id_.Destroy();
-  _impl_.token_.Destroy();
-}
-
-void Uid::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void Uid::Clear() {
-// @@protoc_insertion_point(message_clear_start:net_service.Uid)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.id_.ClearToEmpty();
-  _impl_.token_.ClearToEmpty();
-  _impl_.result_ = false;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Uid::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.Uid.id"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string token = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.Uid.token"));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool result = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.result_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* Uid::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:net_service.Uid)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string id = 1;
-  if (!this->_internal_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.Uid.id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
-  }
-
-  // string token = 2;
-  if (!this->_internal_token().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.Uid.token");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_token(), target);
-  }
-
-  // bool result = 3;
-  if (this->_internal_result() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_result(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:net_service.Uid)
-  return target;
-}
-
-size_t Uid::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:net_service.Uid)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string id = 1;
-  if (!this->_internal_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
-  }
-
-  // string token = 2;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
-  // bool result = 3;
-  if (this->_internal_result() != 0) {
-    total_size += 1 + 1;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Uid::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Uid::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Uid::GetClassData() const { return &_class_data_; }
-
-
-void Uid::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Uid*>(&to_msg);
-  auto& from = static_cast<const Uid&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.Uid)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_id().empty()) {
-    _this->_internal_set_id(from._internal_id());
-  }
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
-  }
-  if (from._internal_result() != 0) {
-    _this->_internal_set_result(from._internal_result());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Uid::CopyFrom(const Uid& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:net_service.Uid)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Uid::IsInitialized() const {
-  return true;
-}
-
-void Uid::InternalSwap(Uid* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.id_, lhs_arena,
-      &other->_impl_.id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
-  swap(_impl_.result_, other->_impl_.result_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Uid::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
       file_level_metadata_net_5fservice_2eproto[7]);
-}
-
-// ===================================================================
-
-class Token::_Internal {
- public:
-};
-
-Token::Token(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:net_service.Token)
-}
-Token::Token(const Token& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Token* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.token_){}
-    , decltype(_impl_.result_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_token().empty()) {
-    _this->_impl_.token_.Set(from._internal_token(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.result_ = from._impl_.result_;
-  // @@protoc_insertion_point(copy_constructor:net_service.Token)
-}
-
-inline void Token::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.token_){}
-    , decltype(_impl_.result_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-Token::~Token() {
-  // @@protoc_insertion_point(destructor:net_service.Token)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void Token::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.token_.Destroy();
-}
-
-void Token::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void Token::Clear() {
-// @@protoc_insertion_point(message_clear_start:net_service.Token)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.token_.ClearToEmpty();
-  _impl_.result_ = false;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Token::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string token = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "net_service.Token.token"));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool result = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.result_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* Token::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:net_service.Token)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string token = 1;
-  if (!this->_internal_token().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "net_service.Token.token");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_token(), target);
-  }
-
-  // bool result = 2;
-  if (this->_internal_result() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_result(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:net_service.Token)
-  return target;
-}
-
-size_t Token::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:net_service.Token)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string token = 1;
-  if (!this->_internal_token().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token());
-  }
-
-  // bool result = 2;
-  if (this->_internal_result() != 0) {
-    total_size += 1 + 1;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Token::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Token::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Token::GetClassData() const { return &_class_data_; }
-
-
-void Token::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Token*>(&to_msg);
-  auto& from = static_cast<const Token&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:net_service.Token)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_token().empty()) {
-    _this->_internal_set_token(from._internal_token());
-  }
-  if (from._internal_result() != 0) {
-    _this->_internal_set_result(from._internal_result());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Token::CopyFrom(const Token& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:net_service.Token)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Token::IsInitialized() const {
-  return true;
-}
-
-void Token::InternalSwap(Token* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.token_, lhs_arena,
-      &other->_impl_.token_, rhs_arena
-  );
-  swap(_impl_.result_, other->_impl_.result_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Token::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_net_5fservice_2eproto_getter, &descriptor_table_net_5fservice_2eproto_once,
-      file_level_metadata_net_5fservice_2eproto[8]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace net_service
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::net_service::Token*
+Arena::CreateMaybeMessage< ::net_service::Token >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::net_service::Token >(arena);
+}
+template<> PROTOBUF_NOINLINE ::net_service::CredentialsSignIn*
+Arena::CreateMaybeMessage< ::net_service::CredentialsSignIn >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::net_service::CredentialsSignIn >(arena);
+}
+template<> PROTOBUF_NOINLINE ::net_service::CredentialsSignUp*
+Arena::CreateMaybeMessage< ::net_service::CredentialsSignUp >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::net_service::CredentialsSignUp >(arena);
+}
 template<> PROTOBUF_NOINLINE ::net_service::MsgPos*
 Arena::CreateMaybeMessage< ::net_service::MsgPos >(Arena* arena) {
   return Arena::CreateMessageInternal< ::net_service::MsgPos >(arena);
@@ -3107,22 +2594,6 @@ Arena::CreateMaybeMessage< ::net_service::PrivateMessageSave >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::net_service::PrivateMessageLoad*
 Arena::CreateMaybeMessage< ::net_service::PrivateMessageLoad >(Arena* arena) {
   return Arena::CreateMessageInternal< ::net_service::PrivateMessageLoad >(arena);
-}
-template<> PROTOBUF_NOINLINE ::net_service::CredentialsSignIn*
-Arena::CreateMaybeMessage< ::net_service::CredentialsSignIn >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::net_service::CredentialsSignIn >(arena);
-}
-template<> PROTOBUF_NOINLINE ::net_service::CredentialsSignUp*
-Arena::CreateMaybeMessage< ::net_service::CredentialsSignUp >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::net_service::CredentialsSignUp >(arena);
-}
-template<> PROTOBUF_NOINLINE ::net_service::Uid*
-Arena::CreateMaybeMessage< ::net_service::Uid >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::net_service::Uid >(arena);
-}
-template<> PROTOBUF_NOINLINE ::net_service::Token*
-Arena::CreateMaybeMessage< ::net_service::Token >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::net_service::Token >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -6,11 +6,25 @@ service net_service {
 	rpc signUp (CredentialsSignUp) returns (Token) {}
 	rpc signIn (CredentialsSignIn) returns (Token) {}
 	rpc signOff (Token) returns (Token) {}
-	rpc getName (Uid) returns (Uid) {}
-	rpc savePublicMessage (Token) returns (Token) {};
-	rpc getPublicMessagess (MsgPos) returns (PublicMessageLoad) {};
-	rpc savePrivateMessage (Token) returns (Token) {};
-	rpc getPrivateMessages (MsgPos) returns (PrivateMessageLoad) {};
+	rpc savePublicMessage (PublicMessageSave) returns (Token) {}
+	rpc getPublicMessages (Token) returns (PublicMessageLoad) {}
+	rpc savePrivateMessage (PrivateMessageSave) returns (Token) {}
+	rpc getPrivateMessages (Token) returns (PrivateMessageLoad) {}
+	rpc getUsername (Token) returns (Token) {}
+}
+
+message Token {
+	string token = 1;
+	bool result = 2;
+}
+message CredentialsSignIn {
+	string login = 1;
+	string hash = 2;
+}
+message CredentialsSignUp {
+	string login = 1;
+	string username = 2;
+	string hash = 3;
 }
 message MsgPos {
 	string token = 1;
@@ -22,10 +36,9 @@ message PublicMessageSave {
 	string token = 3;
 }
 message PublicMessageLoad {
-	string sender = 1;
-	string content = 2;
-	int64 position = 3;
-	string token = 4;
+	repeated string sender = 1;
+	repeated string content = 2;
+	string token = 3;
 }
 message PrivateMessageSave {
 	string sender = 1;
@@ -34,29 +47,8 @@ message PrivateMessageSave {
 	string token = 4;
 }
 message PrivateMessageLoad {
-	string sender = 1;
-	string content = 2;
-	string reciever = 3;
-	int64 position = 4;
-	string token = 5;
-}
-message CredentialsSignIn {
-	string login = 1;
-	string hash = 2;
-	string token = 3;
-}
-message CredentialsSignUp {
-	string login = 1;
-	string username = 2;
-	string hash = 3;
+	repeated string sender = 1;
+	repeated string content = 2;
+	repeated string reciever = 3;
 	string token = 4;
-}
-message Uid {
-	string id = 1;
-	string token = 2;
-	bool result = 3;
-}
-message Token {
-	string token = 1;
-	bool result = 2;
 }

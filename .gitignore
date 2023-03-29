@@ -352,3 +352,6 @@ MigrationBackup/
 /CMakeSettings.json
 /proto/grpc
 /proto/protobuf
+/build/CMakeFiles
+/build
+/test.sh
