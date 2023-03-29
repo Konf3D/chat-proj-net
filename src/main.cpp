@@ -6,8 +6,18 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <thread>
+#include "server.h"
+#include "client.h"
 
 int main()
 {
+	static char answer;
+	std::cout << "Run as server ? [Y/N]\n";
 	
+	std::cin >> answer;
+	if (answer == 'Y')
+		runServer();
+	else
+		ChatGUI().start();
 }
