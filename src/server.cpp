@@ -1,7 +1,10 @@
 #include "server.h"
 #include <random>
+#include <fstream>
 
-
+constexpr auto dbUsersFileName = "users.db";
+constexpr auto dbPublicMessagesFileName = "publicmessages.db";
+constexpr auto dbPrivateMessagesFileName = "privatemessages.db";
 
 bool ChatServer::isTokenValid(const TokenLoginPair& token) const
 {
@@ -29,6 +32,66 @@ std::string ChatServer::generateToken()
         }
     } while (pos != _tokens.end());
     return generatedToken;
+}
+
+ChatServer::ChatServer()
+    :net_service::net_service::Service()
+{
+#ifdef WIN32
+    /* check if database files are present*/
+    system("ni users.db");
+    system("ni publicmessages.db");
+    system("ni privatemessages.db");
+#elif unix
+    system("touch users.db && chmod 600 users.db");
+    system("touch publicmessages.db && chmod 600 publicmessages.db");
+    system("touch privatemessages.db && chmod 600 privatemessages.db");
+#endif
+    /* LOADING DATA FROM LOCAL DATABASE*/
+    /* LOADING USERS*/
+    std::fstream m_usersDBFile(dbUsersFileName, std::ios::out | std::ios::in);
+    std::string login;
+    std::string password;
+    std::string username;
+    while (!m_usersDBFile.eof())
+    {
+        std::getline(m_usersDBFile, login);
+        if (m_usersDBFile.eof())
+            break;
+        std::getline(m_usersDBFile, password);
+        if (m_usersDBFile.eof())
+            break;
+        std::getline(m_usersDBFile, username);
+        _users.push_back({ login, password, username });
+    }
+    /* LOADING PUBLIC MESSAGES*/
+    std::fstream m_messageDBFile;
+    m_messageDBFile.open(dbPublicMessagesFileName, std::ios::out | std::ios::in);
+    std::string message;
+    std::string sender;
+    std::string reciever;
+    while (!m_messageDBFile.eof())
+    {
+        std::getline(m_messageDBFile, message);
+        if (m_messageDBFile.eof())
+            break;
+        std::getline(m_messageDBFile, sender);
+        _publicMessages.push_back({ message,sender });
+    }
+    m_messageDBFile.close();
+    /* LOADING PRIVATE MESSAGES*/
+    m_messageDBFile.open(dbPrivateMessagesFileName, std::ios::out | std::ios::in);
+    while (!m_messageDBFile.eof())
+    {
+        std::getline(m_messageDBFile, message);
+        if (m_messageDBFile.eof())
+            break;
+        std::getline(m_messageDBFile, sender);
+        if (m_messageDBFile.eof())
+            break;
+        std::getline(m_messageDBFile, reciever);
+        _privateMessages.push_back({ message,sender,reciever });
+    }
 }
 
 grpc::Status ChatServer::signUp(::grpc::ServerContext* context, const::net_service::CredentialsSignUp* request, ::net_service::Token* response)
@@ -191,6 +254,18 @@ grpc::Status ChatServer::getPrivateMessages(::grpc::ServerContext* context, cons
     return grpc::Status::OK;
 }
 
+grpc::Status ChatServer::getUsername(::grpc::ServerContext* context, const::net_service::Token* request, ::net_service::Token* response)
+{
+
+    auto isUserPresent = [&request](const User& user)
+    {
+        return ((request->token() == user.username) || (request->token() == user.login));
+    };
+    response->set_token(std::find_if(_users.begin(), _users.end(), isUserPresent)->username);
+
+    return grpc::Status::OK;
+}
+
 std::string random_string(std::size_t length)
 {
     const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -200,7 +275,7 @@ std::string random_string(std::size_t length)
 
     std::string random_string;
 
-    for (std::size_t i = 0; i < length; ++i)
+    for (size_t i = 0; i < length; ++i)
     {
         random_string += CHARACTERS[distribution(generator)];
     }
