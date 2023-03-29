@@ -10,6 +10,7 @@ service net_service {
 	rpc getPublicMessages (Token) returns (PublicMessageLoad) {}
 	rpc savePrivateMessage (PrivateMessageSave) returns (Token) {}
 	rpc getPrivateMessages (Token) returns (PrivateMessageLoad) {}
+	rpc getUsername (Token) returns (Token) {}
 }
 
 message Token {

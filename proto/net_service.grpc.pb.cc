@@ -29,6 +29,7 @@ static const char* net_service_method_names[] = {
   "/net_service.net_service/getPublicMessages",
   "/net_service.net_service/savePrivateMessage",
   "/net_service.net_service/getPrivateMessages",
+  "/net_service.net_service/getUsername",
 };
 
 std::unique_ptr< net_service::Stub> net_service::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -45,6 +46,7 @@ net_service::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
   , rpcmethod_getPublicMessages_(net_service_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_savePrivateMessage_(net_service_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getPrivateMessages_(net_service_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getUsername_(net_service_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status net_service::Stub::signUp(::grpc::ClientContext* context, const ::net_service::CredentialsSignUp& request, ::net_service::Token* response) {
@@ -208,6 +210,29 @@ void net_service::Stub::async::getPrivateMessages(::grpc::ClientContext* context
   return result;
 }
 
+::grpc::Status net_service::Stub::getUsername(::grpc::ClientContext* context, const ::net_service::Token& request, ::net_service::Token* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::net_service::Token, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getUsername_, context, request, response);
+}
+
+void net_service::Stub::async::getUsername(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::net_service::Token, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getUsername_, context, request, response, std::move(f));
+}
+
+void net_service::Stub::async::getUsername(::grpc::ClientContext* context, const ::net_service::Token* request, ::net_service::Token* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getUsername_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::net_service::Token>* net_service::Stub::PrepareAsyncgetUsernameRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::net_service::Token, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getUsername_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::net_service::Token>* net_service::Stub::AsyncgetUsernameRaw(::grpc::ClientContext* context, const ::net_service::Token& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetUsernameRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 net_service::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       net_service_method_names[0],
@@ -279,6 +304,16 @@ net_service::Service::Service() {
              ::net_service::PrivateMessageLoad* resp) {
                return service->getPrivateMessages(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      net_service_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< net_service::Service, ::net_service::Token, ::net_service::Token, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](net_service::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::net_service::Token* req,
+             ::net_service::Token* resp) {
+               return service->getUsername(ctx, req, resp);
+             }, this)));
 }
 
 net_service::Service::~Service() {
@@ -327,6 +362,13 @@ net_service::Service::~Service() {
 }
 
 ::grpc::Status net_service::Service::getPrivateMessages(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::PrivateMessageLoad* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status net_service::Service::getUsername(::grpc::ServerContext* context, const ::net_service::Token* request, ::net_service::Token* response) {
   (void) context;
   (void) request;
   (void) response;
