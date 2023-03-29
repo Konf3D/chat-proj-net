@@ -254,7 +254,7 @@ const char descriptor_table_protodef_net_5fservice_2eproto[] PROTOBUF_SECTION_VA
   " \001(\t\022\017\n\007content\030\002 \001(\t\022\020\n\010reciever\030\003 \001(\t\022"
   "\r\n\005token\030\004 \001(\t\"V\n\022PrivateMessageLoad\022\016\n\006"
   "sender\030\001 \003(\t\022\017\n\007content\030\002 \003(\t\022\020\n\010recieve"
-  "r\030\003 \003(\t\022\r\n\005token\030\004 \001(\t2\362\003\n\013net_service\022>"
+  "r\030\003 \003(\t\022\r\n\005token\030\004 \001(\t2\253\004\n\013net_service\022>"
   "\n\006signUp\022\036.net_service.CredentialsSignUp"
   "\032\022.net_service.Token\"\000\022>\n\006signIn\022\036.net_s"
   "ervice.CredentialsSignIn\032\022.net_service.T"
@@ -267,11 +267,12 @@ const char descriptor_table_protodef_net_5fservice_2eproto[] PROTOBUF_SECTION_VA
   "rvice.PrivateMessageSave\032\022.net_service.T"
   "oken\"\000\022K\n\022getPrivateMessages\022\022.net_servi"
   "ce.Token\032\037.net_service.PrivateMessageLoa"
-  "d\"\000b\006proto3"
+  "d\"\000\0227\n\013getUsername\022\022.net_service.Token\032\022"
+  ".net_service.Token\"\000b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_net_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_net_5fservice_2eproto = {
-    false, false, 1051, descriptor_table_protodef_net_5fservice_2eproto,
+    false, false, 1108, descriptor_table_protodef_net_5fservice_2eproto,
     "net_service.proto",
     &descriptor_table_net_5fservice_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_net_5fservice_2eproto::offsets,
